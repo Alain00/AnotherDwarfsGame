@@ -17,7 +17,7 @@ public class TerrainMesh : MonoBehaviour
             for (int x = 0; x < resolution; x++){
                 int i = x + y * resolution;
                 Mathf.PerlinNoise(x + position.x, y + position.z);
-                vertices[i] = 
+                // vertices[i] = 
             }
         }
     }
