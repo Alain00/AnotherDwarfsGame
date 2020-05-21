@@ -41,6 +41,8 @@
      <Compile Include="Assets\Scripts\IslandGenerator\CircularGradientSettings.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\ColorGenerator.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\ColorSettings.cs" />
+     <Compile Include="Assets\Scripts\IslandGenerator\DetailsGenerator.cs" />
+     <Compile Include="Assets\Scripts\IslandGenerator\DetailsSettings.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\Filter.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\IslandGenerator.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\IslandMesh.cs" />
