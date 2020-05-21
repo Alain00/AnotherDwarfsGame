@@ -6,10 +6,11 @@ public class IslandGenerator : MonoBehaviour
 {
     public int size = 100;
     public int resolution = 1;
+    public int seed = 123456;
     public float lowPolyEffect = 1;
     public IslandMesh islandMesh;
     public IslandMesh islandMesh2;
-    public MeshCollider collider;
+    public MeshCollider meshCollider;
     public CircularGradientSettings circularGradientSettings;
     public NoiseSettings noiseSettings;
     public ColorSettings colorSettings;
@@ -44,7 +45,7 @@ public class IslandGenerator : MonoBehaviour
         for (int z = 0; z < size; z++){
             for (int x = 0; x < size; x++){
                 Vector3 sercent = new Vector3((float)x/size-1, 0, (float)z/size-1);
-                float elevation = noise.Calculate(sercent.x, sercent.z) * circularGradient.Calculate(x,z);  
+                float elevation = noise.Calculate(sercent.x + seed, sercent.z + seed) * circularGradient.Calculate(x,z);  
                 float elevationNormalized = Mathf.Clamp01(elevation / (noiseSettings.rougness + circularGradientSettings.rougness));
                 
                 colors.Add(colorGenerator.Calculate(elevationNormalized));
@@ -84,10 +85,10 @@ public class IslandGenerator : MonoBehaviour
         
         trianglesAll.AddRange(triangles);
         trianglesAll.AddRange(trianglesTwo);
-        if (!collider.sharedMesh){
-            collider.sharedMesh = new Mesh();
+        if (!meshCollider.sharedMesh){
+            meshCollider.sharedMesh = new Mesh();
         }
-        var colliderMesh = collider.sharedMesh;
+        var colliderMesh = meshCollider.sharedMesh;
         colliderMesh.vertices = vertices.ToArray();
         
         colliderMesh.triangles = trianglesAll.ToArray();
