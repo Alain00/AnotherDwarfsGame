@@ -18,6 +18,7 @@ public class CircularGradient : Filter
         Vector3 direction = pos - center;
         float distance = direction.magnitude;
         float normalized = distance / settings.radius;
+        normalized *= normalized;
         return Mathf.Max(0, 1 - normalized) * settings.rougness;
     }
 }
