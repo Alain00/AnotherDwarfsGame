@@ -101,6 +101,7 @@ public class IslandGenerator : MonoBehaviour
         
         colliderMesh.triangles = trianglesAll.ToArray();
         colliderMesh.RecalculateNormals();
+        meshCollider.sharedMesh = colliderMesh;
         // meshTwo = meshFilterTwo.sharedMesh;
         // meshTwo.Clear();
         // meshTwo.vertices = verticesTwo.ToArray();
