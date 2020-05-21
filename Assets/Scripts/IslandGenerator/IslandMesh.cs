@@ -6,7 +6,7 @@ public class IslandMesh : MonoBehaviour
 {
     public MeshFilter filter;
 
-    public void GenerateMesh(Vector3[] vertices, int[] triangles, Color[] colors){
+    public Mesh GenerateMesh(Vector3[] vertices, int[] triangles, Color[] colors){
         Mesh mesh;
         if (!filter.sharedMesh){
             mesh = new Mesh();
@@ -18,5 +18,6 @@ public class IslandMesh : MonoBehaviour
         mesh.triangles = triangles;
         mesh.colors = colors;
         mesh.RecalculateNormals();
+        return mesh;
     }
 }

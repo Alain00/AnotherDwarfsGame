@@ -9,6 +9,7 @@ public class IslandGenerator : MonoBehaviour
     public float lowPolyEffect = 1;
     public IslandMesh islandMesh;
     public IslandMesh islandMesh2;
+    public MeshCollider collider;
     public CircularGradientSettings circularGradientSettings;
     public NoiseSettings noiseSettings;
     public ColorSettings colorSettings;
@@ -26,10 +27,11 @@ public class IslandGenerator : MonoBehaviour
     void GenerateMesh(){
         if (resolution == 0) return;
         var vertices = new List<Vector3>();
-        var verticesTwo = new List<Vector3>();
+        //var verticesTwo = new List<Vector3>();
         var colors = new List<Color>();
         var triangles = new List<int>();
         var trianglesTwo = new List<int>();
+        var trianglesAll = new List<int>();
 
         var axisA = new Vector3(Vector3.up.y, Vector3.up.z, Vector3.up.x);
         var axisB = Vector3.Cross(Vector3.up, axisA);
@@ -52,7 +54,7 @@ public class IslandGenerator : MonoBehaviour
                 point.x += Random.Range(-1f, 1f) * lowPolyEffect;
                 point.z += Random.Range(-1f, 1f) * lowPolyEffect;
                 vertices.Add(point);
-                verticesTwo.Add(point);
+                //verticesTwo.Add(point);
                 i++;
             }
         }
@@ -65,7 +67,6 @@ public class IslandGenerator : MonoBehaviour
                     triangles.Add(i+size+1);
                     triangles.Add(i+size);
                    
-
                     // triangles.Add(i);
                     // triangles.Add(i+1);
                     // triangles.Add(i+size+1);
@@ -79,8 +80,18 @@ public class IslandGenerator : MonoBehaviour
             }
         }
         islandMesh.GenerateMesh(vertices.ToArray(), triangles.ToArray(), colors.ToArray());
-        islandMesh2.GenerateMesh(verticesTwo.ToArray(), trianglesTwo.ToArray(), colors.ToArray());
-
+        islandMesh2.GenerateMesh(vertices.ToArray(), trianglesTwo.ToArray(), colors.ToArray());
+        
+        trianglesAll.AddRange(triangles);
+        trianglesAll.AddRange(trianglesTwo);
+        if (!collider.sharedMesh){
+            collider.sharedMesh = new Mesh();
+        }
+        var colliderMesh = collider.sharedMesh;
+        colliderMesh.vertices = vertices.ToArray();
+        
+        colliderMesh.triangles = trianglesAll.ToArray();
+        colliderMesh.RecalculateNormals();
         // meshTwo = meshFilterTwo.sharedMesh;
         // meshTwo.Clear();
         // meshTwo.vertices = verticesTwo.ToArray();
