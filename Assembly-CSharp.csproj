@@ -47,6 +47,8 @@
   <ItemGroup>     <Compile Include="Assets\Scripts\CaveGenerator\CameraControls.cs" />
      <Compile Include="Assets\Scripts\CaveGenerator\CircularGradient.cs" />
      <Compile Include="Assets\Scripts\CaveGenerator\CircularGradientSettings.cs" />
+     <Compile Include="Assets\Scripts\CaveGenerator\ColorGenerator.cs" />
+     <Compile Include="Assets\Scripts\CaveGenerator\ColorSettings.cs" />
      <Compile Include="Assets\Scripts\CaveGenerator\Filter.cs" />
      <Compile Include="Assets\Scripts\CaveGenerator\IslandGenerator.cs" />
      <Compile Include="Assets\Scripts\CaveGenerator\Noise.cs" />
