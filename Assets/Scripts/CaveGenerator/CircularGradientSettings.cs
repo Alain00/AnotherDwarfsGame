@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class NoiseSettings
+public class CircularGradientSettings
 {
+    public float radius = 5;
     public float rougness = 5;
-    public float scale = 5;
 }
