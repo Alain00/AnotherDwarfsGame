@@ -12,6 +12,8 @@ public class ColorGenerator
     }
 
     public Color Calculate(float yNormalized){
-        return settings.gradient.Evaluate(yNormalized);
+        Color color = settings.gradient.Evaluate(yNormalized);
+        //color += new Color(Random.Range(0.0f,0.1f), Random.Range(0.0f,0.1f), Random.Range(0.0f,0.1f));
+        return color;
     }
 }
