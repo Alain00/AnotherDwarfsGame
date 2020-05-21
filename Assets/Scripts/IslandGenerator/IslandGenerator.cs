@@ -15,12 +15,14 @@ public class IslandGenerator : MonoBehaviour
     public CircularGradientSettings circularGradientSettings;
     public NoiseSettings noiseSettings;
     public ColorSettings colorSettings;
+    public DetailsSettings detailsSettings;
+
     
-    
+    DetailsGenerator detailsGenerator;
     Noise noise;
     CircularGradient circularGradient;
     ColorGenerator colorGenerator;
-
+    Vector2[][] detailPoints;
 
     void Awake(){
         if (randomSeed){
@@ -48,6 +50,10 @@ public class IslandGenerator : MonoBehaviour
         noise = new Noise(noiseSettings);
         circularGradient = new CircularGradient(new Vector3(size/2, 0, size/2), circularGradientSettings);
         colorGenerator = new ColorGenerator(colorSettings);
+        detailsGenerator = new DetailsGenerator(detailsSettings, size, new Vector2(0,-(size*2)));
+        detailPoints = detailsGenerator.ComputedPoints();
+        detailsGenerator.GenerateDetails(detailPoints);
+        //Debug.Log(detailPoints[0].Length);
 
         int i = 0;
         for (int z = 0; z < size; z++){
@@ -102,12 +108,20 @@ public class IslandGenerator : MonoBehaviour
         colliderMesh.triangles = trianglesAll.ToArray();
         colliderMesh.RecalculateNormals();
         meshCollider.sharedMesh = colliderMesh;
-        // meshTwo = meshFilterTwo.sharedMesh;
-        // meshTwo.Clear();
-        // meshTwo.vertices = verticesTwo.ToArray();
-        // meshTwo.triangles = trianglesTwo.ToArray();
-        // meshTwo.colors = colors.ToArray();
-        // meshTwo.RecalculateNormals();
+    }
 
+    void OnDrawGizmos(){
+        if (detailPoints == null || detailPoints.Length == 0) return;
+        if (!detailsSettings.debug) return;
+
+        for (int i = 0; i < detailPoints.Length; i++){
+            float colorValue = 0.1f +  ((float) i / detailPoints.Length);
+            Gizmos.color = new Color(colorValue, colorValue, colorValue, 1);
+            foreach(Vector2 point in detailPoints[i]){
+                Vector3 pos = new Vector3(point.x, detailsSettings.maxHeight + (5*i), point.y);
+                Gizmos.DrawSphere(pos, 1);
+                Gizmos.DrawRay(pos, Vector3.down);
+            }
+        }
     }
 }
