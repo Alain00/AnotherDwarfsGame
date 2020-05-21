@@ -7,6 +7,7 @@ public class IslandGenerator : MonoBehaviour
     public int size = 100;
     public int resolution = 1;
     public int seed = 123456;
+    public bool randomSeed = false;
     public float lowPolyEffect = 1;
     public IslandMesh islandMesh;
     public IslandMesh islandMesh2;
@@ -20,6 +21,13 @@ public class IslandGenerator : MonoBehaviour
     CircularGradient circularGradient;
     ColorGenerator colorGenerator;
 
+
+    void Awake(){
+        if (randomSeed){
+            seed = Random.Range(1, 123456);
+        }
+        GenerateMesh();
+    }
 
     void OnValidate(){
         GenerateMesh();
