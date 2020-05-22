@@ -78,11 +78,12 @@ public class DetailsGenerator
         for (int i = 0; i < points.Length; i++){
             if (settings.layers[i].prefabs.Length == 0) continue;
             foreach (Vector2 point in points[i]){
-                Vector3 rayOrigin = new Vector3(point.x, settings.maxHeight, point.y);
+                Vector3 rayOrigin = new Vector3(point.x, settings.maxHeight*2, point.y);
                 RaycastHit raycastHit;
-                if (Physics.Raycast(rayOrigin, Vector3.down, out raycastHit, settings.maxHeight*2)){
+                if (Physics.Raycast(rayOrigin, Vector3.down, out raycastHit)){
                     Vector3 candidate = raycastHit.point;
                     if (candidate.y >= settings.layers[i].minHeight && candidate.y <= settings.layers[i].maxHeight){
+                        Debug.Log(candidate);
                         DetailsSettings.Layer layer = settings.layers[i];
                         GameObject toPlace = layer.prefabs[Random.Range(0, layer.prefabs.Length)];
                         

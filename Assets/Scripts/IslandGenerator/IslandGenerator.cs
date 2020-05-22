@@ -31,6 +31,10 @@ public class IslandGenerator : MonoBehaviour
         GenerateMesh();
     }
 
+    void Start(){
+        detailsGenerator.GenerateDetails(detailPoints);
+    }
+
     void OnValidate(){
         GenerateMesh();
     }
@@ -108,7 +112,6 @@ public class IslandGenerator : MonoBehaviour
         colliderMesh.RecalculateNormals();
         meshCollider.sharedMesh = colliderMesh;
         
-        detailsGenerator.GenerateDetails(detailPoints);
     }
 
     void OnDrawGizmos(){
