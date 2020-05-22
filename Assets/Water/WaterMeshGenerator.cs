@@ -43,4 +43,9 @@ public class WaterMeshGenerator : MonoBehaviour
         _mesh.SetTriangles(triangles,0);
         return _mesh;
     }
+
+    void OnDrawGizmosSelected(){
+        Gizmos.color = Color.blue;
+        Gizmos.DrawCube(transform.position, new Vector3(CellSize, 1, CellSize));
+    }
 }
