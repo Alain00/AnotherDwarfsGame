@@ -85,7 +85,9 @@ public class DetailsGenerator
                     if (candidate.y >= settings.layers[i].minHeight && candidate.y <= settings.layers[i].maxHeight){
                         DetailsSettings.Layer layer = settings.layers[i];
                         GameObject toPlace = layer.prefabs[Random.Range(0, layer.prefabs.Length)];
-                        GameObject.Instantiate(toPlace, candidate, Quaternion.identity);
+                        
+                        GameObject newInstance = GameObject.Instantiate(toPlace, candidate, Quaternion.identity);
+                        newInstance.transform.eulerAngles = new Vector3(0,Random.value*360, 0);
                     }
                 }
             }

@@ -52,7 +52,6 @@ public class IslandGenerator : MonoBehaviour
         colorGenerator = new ColorGenerator(colorSettings);
         detailsGenerator = new DetailsGenerator(detailsSettings, size, new Vector2(0,-(size*2)));
         detailPoints = detailsGenerator.ComputedPoints();
-        detailsGenerator.GenerateDetails(detailPoints);
         //Debug.Log(detailPoints[0].Length);
 
         int i = 0;
@@ -108,6 +107,8 @@ public class IslandGenerator : MonoBehaviour
         colliderMesh.triangles = trianglesAll.ToArray();
         colliderMesh.RecalculateNormals();
         meshCollider.sharedMesh = colliderMesh;
+        
+        detailsGenerator.GenerateDetails(detailPoints);
     }
 
     void OnDrawGizmos(){
