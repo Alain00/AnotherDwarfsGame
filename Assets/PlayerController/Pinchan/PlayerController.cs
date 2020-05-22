@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
     Vector3 MoveTo;
     Rigidbody rB;
     Quaternion LookDir;
+    float time;
     void Start()
     {
         CoolDown = FireCadencia;
         rB = GetComponent<Rigidbody>();
         LookDir = new Quaternion();
+        time = 1;
     }
 
     // Update is called once per frame
@@ -26,19 +28,21 @@ public class PlayerController : MonoBehaviour
     {
         MoveTo.x = Input.GetAxisRaw("Horizontal");
         MoveTo.z = Input.GetAxisRaw("Vertical");
+        time -= Time.deltaTime;
         CoolDown -= Time.deltaTime;
         if(Input.GetButton("Fire1") && CoolDown <= 0){
             Shot();
         }  
             LookDir.x = 0;
             LookDir.z = 0;
-            Player.transform.rotation =  LookDir;     
+            Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , (7f * Time.deltaTime));     
     }
 
     void FixedUpdate(){
         Vector3 PosToMove = rB.position +  MoveTo * movementSpeed * Time.fixedDeltaTime ;
         rB.MovePosition(PosToMove );
-        if(MoveTo.x != 0 || MoveTo.z != 0)
+        if(MoveTo.x != 0 || MoveTo.z != 0 )
+         if(time <= 0)
         LookDir = Quaternion.LookRotation( (rB.position + MoveTo * movementSpeed) - rB.position );
     }
 
@@ -61,12 +65,11 @@ public class PlayerController : MonoBehaviour
         
        
            
-
-        Player.transform.rotation = LookDir;
+        time = 1f;
+        Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
         CoolDown = FireCadencia;
-        Quaternion BulletRot = Player.transform.rotation;
-
-        GameObject CurrentBullet = Instantiate(Bullet , Weapon.transform.position , BulletRot);
+        GameObject CurrentBullet = Instantiate(Bullet , Weapon.transform.position , LookDir);
+        Instantiate(Flash , CurrentBullet.transform.position , CurrentBullet.transform.rotation , Player.transform);
         //Physics.IgnoreCollision(CurrentBullet.GetComponentInChildren<Collider>() , GetComponentInChildren<Collider>() , true) ;
     }
 }

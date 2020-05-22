@@ -15,6 +15,8 @@ public class AgentPathFinding : MonoBehaviour
     private Vector3 CurTargetPos;
     public bool IsUnderFire;
     float timer;
+    public GameObject InFireVFX;
+    GameObject CurrentVFX;
 
     private void Start()
     {
@@ -31,12 +33,15 @@ public class AgentPathFinding : MonoBehaviour
         }
         if(IsUnderFire){
             Speed = 3;
-            
-            }
+            if(CurrentVFX == null)
+                CurrentVFX = Instantiate(InFireVFX, transform.position , Quaternion.identity , transform);
+        }
         else Speed = 5;  
         timer -= Time.deltaTime;
         if(timer <= 0){
+            Destroy(CurrentVFX);
             IsUnderFire = false;
+            CurrentVFX = null;
             timer = 2;
         }  
     }
