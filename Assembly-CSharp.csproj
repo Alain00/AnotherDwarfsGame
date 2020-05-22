@@ -36,6 +36,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Pathfinding\AgentPathFinding.cs" />
+     <Compile Include="Assets\Pathfinding\BinaryTree.cs" />
+     <Compile Include="Assets\Pathfinding\Grid.cs" />
+     <Compile Include="Assets\Pathfinding\Node.cs" />
+     <Compile Include="Assets\Pathfinding\PathRequester.cs" />
+     <Compile Include="Assets\Pathfinding\Pathfinding.cs" />
+     <Compile Include="Assets\PlayerController\Pinchan\BulletHolder.cs" />
+     <Compile Include="Assets\PlayerController\Pinchan\CameraController.cs" />
+     <Compile Include="Assets\PlayerController\Pinchan\Enemy.cs" />
+     <Compile Include="Assets\PlayerController\Pinchan\FireBuff.cs" />
+     <Compile Include="Assets\PlayerController\Pinchan\PlayerController.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\CameraControls.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\CircularGradient.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\CircularGradientSettings.cs" />
