@@ -41,13 +41,13 @@ public class IslandGenerator : MonoBehaviour
 
     void GenerateMesh(){
         if (resolution == 0) return;
-        var vertices = new List<Vector3>();
+        
         //var verticesTwo = new List<Vector3>();
         var colors = new List<Color>();
         var triangles = new List<int>();
         var trianglesTwo = new List<int>();
         var trianglesAll = new List<int>();
-
+        var vertices = new List<Vector3>();
         var axisA = new Vector3(Vector3.up.y, Vector3.up.z, Vector3.up.x);
         var axisB = Vector3.Cross(Vector3.up, axisA);
 
