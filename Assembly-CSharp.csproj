@@ -2,8 +2,6 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <CscToolPath>C:\Program Files\Unity\New\Unity\Editor\Data\Tools\RoslynScripts</CscToolPath>
-    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{39090825-D7AF-5AEE-4858-183BCDE6F398}</ProjectGuid>
+    <ProjectGuid>{25080939-afd7-ee5a-4858-183bcde6f398}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -30,15 +28,6 @@
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>Temp\bin\Release\</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-  </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
     <NoStdLib>true</NoStdLib>
@@ -47,24 +36,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files\Unity\New\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>C:\Program Files\Unity\New\Unity\Editor\Data\Managed/UnityEditor.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
      <Compile Include="Assets\Pathfinding\AgentPathFinding.cs" />
      <Compile Include="Assets\Pathfinding\BinaryTree.cs" />
      <Compile Include="Assets\Pathfinding\Grid.cs" />
      <Compile Include="Assets\Pathfinding\Node.cs" />
      <Compile Include="Assets\Pathfinding\PathRequester.cs" />
      <Compile Include="Assets\Pathfinding\Pathfinding.cs" />
+     <Compile Include="Assets\PlayerController\Pinchan\Ammo.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\BulletHolder.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\CameraController.cs" />
+     <Compile Include="Assets\PlayerController\Pinchan\CameraShake.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Enemy.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\FireBuff.cs" />
+     <Compile Include="Assets\PlayerController\Pinchan\Gun.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\PlayerController.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\CameraControls.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\CircularGradient.cs" />
@@ -673,7 +657,7 @@
   <ItemGroup>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
