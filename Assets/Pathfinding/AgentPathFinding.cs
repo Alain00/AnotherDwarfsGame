@@ -21,6 +21,7 @@ public class AgentPathFinding : MonoBehaviour
     private void Start()
     {
         timer = 2;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         CurTargetPos = transform.position;
        // PathRequester.RequestPath( transform.position , target.position , OnPathFound );
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform player;
-    public float movementspeed;
+    public float smoothTime;
     Vector3 MousePos;
     Vector3 MovePosition;
     Camera cam;
@@ -19,6 +19,8 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        //Tu tranquilo q esto de aca abajo encuentra el transform q hace falta
+        player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Collider>().gameObject.transform;
     }
 
     void Update()
@@ -27,9 +29,17 @@ public class CameraController : MonoBehaviour
        MovePosition.y = player.position.y + Offset.y;
        MovePosition.z = player.position.z + Offset.z;
       
-         
-        cam.transform.position = Vector3.SmoothDamp(transform.position , MovePosition , ref Velocity , movementspeed);
-    
+        if(Input.GetKey(KeyCode.Q)){
+            MovePosition -=  cam.transform.right; 
+            
+        }
+         if (Input.GetMouseButtonDown(1))
+        {
+            Shake();
+        }
+ 
+        //cam.transform.position = Vector3.SmoothDamp( cam.transform.position,MovePosition,ref Velocity , smoothTime) ;
+        cam.transform.LookAt(player.transform);
         //Al dar click izquierdo
         if (Input.GetMouseButtonDown(0))
         {
@@ -38,9 +48,9 @@ public class CameraController : MonoBehaviour
         }
 
         //Al dar click derecho
-        if (Input.GetMouseButtonDown(1))
-        {
-        }
+       
+
+      
 
         //ZOOOooomm
         if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
@@ -48,10 +58,8 @@ public class CameraController : MonoBehaviour
         cam.fieldOfView = Mathf.Clamp(cam.fieldOfView, MinZoomScale, MaxZoomScale);
     }
 
-    //Mover la camara
-    void LateUpdate()
-    {
-       
-    }
+   public void Shake(){
+       MovePosition += Random.insideUnitSphere;
+   }
  
 }    

@@ -4,31 +4,54 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float movementSpeed;
-    public GameObject Bullet;
+       
     public GameObject Player;
-    public GameObject Weapon;
-    public GameObject Flash;
-    public float FireCadencia;
-    float CoolDown;
+    
+    
+    //Movement
     Vector3 MoveTo;
     Rigidbody rB;
+    public float movementSpeed;
+    //RotationStuff
     Quaternion LookDir;
     float time;
+    //WeaponsStuff
+    int indice;
+    Gun CurrentGun;
+    float CoolDown;
+
+    //ItemsStuff
+
+    public List <Gun> Weapons = new List<Gun>();
+
     void Start()
     {
-        CoolDown = FireCadencia;
+        CoolDown = 0;
         rB = GetComponent<Rigidbody>();
         LookDir = new Quaternion();
         time = 1;
+        //Coger todas las armas
+        Weapons.AddRange(GetComponentsInChildren<Gun>());
+        for(int i = 0 ; i < Weapons.Count ; i++){
+            if(!Weapons[i].gameObject.activeSelf){
+                Weapons.Remove(Weapons[i]);
+                i--;
+            }    
+        }
+        CurrentGun = Weapons[0];
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         MoveTo.x = Input.GetAxisRaw("Horizontal");
         MoveTo.z = Input.GetAxisRaw("Vertical");
         time -= Time.deltaTime;
+        
+        if(Input.GetKeyDown(KeyCode.Q)){
+            ChangeWeapon(1);
+        }
+        
         CoolDown -= Time.deltaTime;
         if(Input.GetButton("Fire1") && CoolDown <= 0){
             Shot();
@@ -52,24 +75,38 @@ public class PlayerController : MonoBehaviour
        Ray ray =  Camera.main.ScreenPointToRay(Input.mousePosition);
        float HitDist;
        Plane plane = new Plane(Vector3.up , Player.transform.position);
-       /*
-        if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000))
-            LookDir = Quaternion.LookRotation(hit.point - player.position);
-       else 
-            LookDir = Quaternion.LookRotation(ray.GetPoint(1000) - player.position);
-*/
-        if(plane.Raycast(ray , out HitDist )){
+       RaycastHit hit;
+       
+        if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000 ))
+            LookDir = Quaternion.LookRotation(hit.point - Player.transform.position);
+     
+        /*if(plane.Raycast(ray , out HitDist )){
            Vector3 TargetPos = ray.GetPoint(HitDist);
            LookDir = Quaternion.LookRotation(TargetPos - Player.transform.position);
-        }
+        }*/
         
        
            
         time = 1f;
         Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
-        CoolDown = FireCadencia;
-        GameObject CurrentBullet = Instantiate(Bullet , Weapon.transform.position , LookDir);
-        Instantiate(Flash , CurrentBullet.transform.position , CurrentBullet.transform.rotation , Player.transform);
-        //Physics.IgnoreCollision(CurrentBullet.GetComponentInChildren<Collider>() , GetComponentInChildren<Collider>() , true) ;
+        CurrentGun.Shot(Player.transform , LookDir);
+        CoolDown = CurrentGun.FireCadencia;
+    }
+
+    void ChangeWeapon( int oper ){
+        Weapons[indice].gameObject.SetActive(false);
+        if(oper == 1)
+            indice++;
+        else indice--;
+        if(indice == Weapons.Count)
+            indice = 0;
+        if(indice < 0)
+            indice = Weapons.Count - 1;
+
+        CurrentGun = Weapons[indice];            
+        Weapons[indice].gameObject.SetActive(true);
+    }
+    public void AddWeapon(Gun ToAdd){
+            Weapons.Add(ToAdd);
     }
 }
