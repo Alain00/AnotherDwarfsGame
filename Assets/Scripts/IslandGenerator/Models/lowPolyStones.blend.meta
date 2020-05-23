@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: e85993bb23786b745ac032aef624c314
+guid: 66ef52c96d293a349957e2df2d7defdd
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TreePalm
-    second: {fileID: 2100000, guid: 90617f64a17a9964d94ebf6ef2f938a2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TreePalmBark
-    second: {fileID: 2100000, guid: 9d8ce5655e5563141b142087df1a2448, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TreePalmLeaves
-    second: {fileID: 2100000, guid: 8f5fbc848a0ef314ebc0d3a50b3c082e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -52,7 +37,7 @@ ModelImporter:
     globalScale: 0.5
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 0
+    useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1

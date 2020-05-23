@@ -51,35 +51,40 @@ public class PlayerController : MonoBehaviour
     {
         MoveTo.x = Input.GetAxisRaw("Horizontal");
         MoveTo.z = Input.GetAxisRaw("Vertical");
+        bool firing = Input.GetButton("Fire1");
         time -= Time.deltaTime;
         
+
         if(Input.GetKeyDown(KeyCode.Q)){
             ChangeWeapon(1);
         }
         if(Input.GetKeyDown(KeyCode.E)){
             ChangeItemRightHand(1);
         }
+       if(MoveTo.x != 0 || MoveTo.z != 0 )
+                if(time <= 0){
+                    LookDir = Quaternion.LookRotation( (rB.position + MoveTo * movementSpeed) - rB.position );
+                }
         
         CoolDown -= Time.deltaTime;
-        if(Input.GetButton("Fire1") && CoolDown <= 0){
+        if(Input.GetButton("Fire1") ){
             OnClickLookDir();
-            Shot();
+            if (CoolDown <= 0)
+                Shot();
         }
         else if (Input.GetButtonDown("Fire2")){
             OnClickLookDir();
             ItemAction();
         }  
-            LookDir.x = 0;
-            LookDir.z = 0;
-            Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , (7f * Time.deltaTime));     
+
+        LookDir.x = 0;
+        LookDir.z = 0;
+        Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , (7f * Time.deltaTime));     
     }
 
     void FixedUpdate(){
         Vector3 PosToMove = rB.position +  MoveTo * movementSpeed * Time.fixedDeltaTime ;
         rB.MovePosition(PosToMove );
-        if(MoveTo.x != 0 || MoveTo.z != 0 )
-         if(time <= 0)
-        LookDir = Quaternion.LookRotation( (rB.position + MoveTo * movementSpeed) - rB.position );
     }
 
     void OnClickLookDir(){
@@ -87,7 +92,7 @@ public class PlayerController : MonoBehaviour
        Plane plane = new Plane(Vector3.up , Player.transform.position);
        RaycastHit hit;
        
-        if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000 ))
+       if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000 ))
             LookDir = Quaternion.LookRotation(hit.point - Player.transform.position);        
         time = 1f;
         Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
