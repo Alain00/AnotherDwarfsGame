@@ -61,8 +61,9 @@ public class AgentPathFinding : MonoBehaviour
         Vector3 CurTarget = Path[0];
         while (true)
         {
-            if (Vector3.SqrMagnitude(CurTarget - transform.position) < 4  )
+            if (Vector3.SqrMagnitude(CurTarget - transform.position) < 1  )
             {
+        
                 WayPointIndex++;
                 if (WayPointIndex >= Path.Length)
                 {
