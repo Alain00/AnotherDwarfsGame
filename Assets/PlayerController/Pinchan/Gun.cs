@@ -52,6 +52,7 @@ public class Gun : MonoBehaviour
                     GameObject CurrentVFX = Instantiate( Flash , ShotPoint.position , CurrentBullet.transform.rotation , Player.transform);
                     Destroy(CurrentVFX,5);
                     i++;
+                    if(TimeBThem > 0)
                     yield return new WaitForSeconds(TimeBThem);
                 }else  {
                     OutOfAmmo();
