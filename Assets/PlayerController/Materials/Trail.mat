@@ -84,7 +84,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_C51DEAFD: {r: 0.31180236, g: 2.801743, b: 0.044006355, a: 0}
+    - Color_C51DEAFD: {r: 2.801743, g: 1.3653258, b: 0.044006355, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

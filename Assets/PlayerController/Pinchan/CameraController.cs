@@ -23,13 +23,13 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-       
-       /* MousePos = cam.ScreenToWorldPoint(new Vector3( Input.mousePosition.x, Input.mousePosition.y , 1f ));
-        Vector3 Dir = MousePos -  player.position;
-        angle = Mathf.Atan2(Dir.x,Dir.z) * Mathf.Rad2Deg;
-        
-        player.eulerAngles = new Vector3(player.eulerAngles.x , angle , player.eulerAngles.z);*/
-
+       MovePosition.x = player.position.x;
+       MovePosition.y = player.position.y + Offset.y;
+       MovePosition.z = player.position.z + Offset.z;
+      
+         
+        cam.transform.position = Vector3.SmoothDamp(transform.position , MovePosition , ref Velocity , movementspeed);
+    
         //Al dar click izquierdo
         if (Input.GetMouseButtonDown(0))
         {
@@ -43,23 +43,15 @@ public class CameraController : MonoBehaviour
         }
 
         //ZOOOooomm
-        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
            cam.fieldOfView += Input.GetAxis("Mouse ScrollWheel") * ZoomSensivity;
-        if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
-            cam.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * ZoomSensivity;
-       
         cam.fieldOfView = Mathf.Clamp(cam.fieldOfView, MinZoomScale, MaxZoomScale);
     }
 
     //Mover la camara
     void LateUpdate()
     {
-       MovePosition.x = player.position.x;
-       MovePosition.y = player.position.y + Offset.y;
-       MovePosition.z = player.position.z + Offset.z;
-      
-         
-        cam.transform.position = Vector3.SmoothDamp(transform.position , MovePosition , ref Velocity , movementspeed);
+       
     }
  
 }    
