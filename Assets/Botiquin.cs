@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Botiquin : MonoBehaviour
+public class Botiquin : Item
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public override void ItemAction(Quaternion Dir){
+       
+   }
 }
