@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
     {
         MoveTo.x = Input.GetAxisRaw("Horizontal");
         MoveTo.z = Input.GetAxisRaw("Vertical");
-        bool firing = Input.GetButton("Fire1");
         time -= Time.deltaTime;
         
 
