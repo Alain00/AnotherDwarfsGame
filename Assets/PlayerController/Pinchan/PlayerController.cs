@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,10 @@ public class PlayerController : MonoBehaviour
     Vector3 MoveTo;
     Rigidbody rB;
     public float movementSpeed;
+    Animator anim;
+    public float TimeMulti;
+
+    private float speed;
     //RotationStuff
     Quaternion LookDir;
     float time;
@@ -28,6 +33,8 @@ public class PlayerController : MonoBehaviour
    
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
+        speed =  anim.GetFloat("speed");
         CoolDown = 0;
         rB = GetComponent<Rigidbody>();
         LookDir = new Quaternion();
@@ -49,8 +56,8 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        MoveTo.x = Input.GetAxisRaw("Horizontal");
-        MoveTo.z = Input.GetAxisRaw("Vertical");
+        MoveTo.x = Input.GetAxis("Horizontal");
+        MoveTo.z = Input.GetAxis("Vertical");
         time -= Time.deltaTime;
         
 
@@ -60,10 +67,20 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E)){
             ChangeItemRightHand(1);
         }
-       if(MoveTo.x != 0 || MoveTo.z != 0 )
-                if(time <= 0){
-                    LookDir = Quaternion.LookRotation( (rB.position + MoveTo * movementSpeed) - rB.position );
-                }
+
+        if (MoveTo.x != 0 || MoveTo.z != 0)
+        {
+            if (time <= 0)
+            {
+                LookDir = Quaternion.LookRotation((rB.position + MoveTo * movementSpeed) - rB.position);
+            }
+
+            speed += Time.deltaTime * TimeMulti;
+
+        }
+        else speed -= Time.deltaTime * 2 * TimeMulti;
+
+       
         
         CoolDown -= Time.deltaTime;
         if(Input.GetButton("Fire1") ){
@@ -79,6 +96,12 @@ public class PlayerController : MonoBehaviour
         LookDir.x = 0;
         LookDir.z = 0;
         Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , (7f * Time.deltaTime));     
+    }
+
+    private void LateUpdate()
+    {
+        speed = Mathf.Clamp(speed, 0, 1);
+        anim.SetFloat("speed",speed);
     }
 
     void FixedUpdate(){

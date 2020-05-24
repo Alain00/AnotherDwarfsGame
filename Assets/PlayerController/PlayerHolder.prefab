@@ -155,7 +155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &898556358
 Transform:
   m_ObjectHideFlags: 0
@@ -5488,7 +5488,7 @@ Transform:
   m_GameObject: {fileID: 1039483944006287026}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.592, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3463331264094423554}
   - {fileID: 8067349738790819988}
@@ -5548,7 +5548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4142417558180179116
 Transform:
   m_ObjectHideFlags: 0
@@ -15488,8 +15488,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b0c77f8c32c2d4581ce95e361381da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 1039483944006287026}
   movementSpeed: 11
+  TimeMulti: 1
   Weapons: []
   RightHand: []
 --- !u!54 &7248001649226553442
@@ -20734,7 +20735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Flash: {fileID: 883607706911560576, guid: 73c2e07dd52014b48aaa489d06c8852c, type: 3}
   Bullet: {fileID: 6172916520269166408, guid: c9800dfbee04b4d4a9559c554b4c1902, type: 3}
-  ShotPoint: {fileID: 7248001649333323097}
+  ShotPoint: {fileID: 7248001650069223314}
   FireCadencia: 1.5
   Ammo: 100
   Charger: 100
@@ -20805,7 +20806,7 @@ Camera:
     height: 1
   near clip plane: 0.5
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 46.7
   m_Depth: -1
@@ -20906,8 +20907,8 @@ MonoBehaviour:
   player: {fileID: 0}
   smoothTime: 0
   ZoomSensivity: 30
-  MinZoomScale: 40
-  MaxZoomScale: 80
+  MinZoomScale: 60
+  MaxZoomScale: 100
   Offset: {x: 0, y: 11, z: -5}
 --- !u!114 &7248001649013848552
 MonoBehaviour:
@@ -21161,6 +21162,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091318628751439537, guid: d339fab5eed86014a95ae8d9be3d33be,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091318628751439537, guid: d339fab5eed86014a95ae8d9be3d33be,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091318628751439537, guid: d339fab5eed86014a95ae8d9be3d33be,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d339fab5eed86014a95ae8d9be3d33be, type: 3}
