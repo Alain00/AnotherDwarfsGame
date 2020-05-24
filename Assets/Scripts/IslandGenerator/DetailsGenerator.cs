@@ -83,7 +83,7 @@ public class DetailsGenerator
                 if (Physics.Raycast(rayOrigin, Vector3.down, out raycastHit)){
                     Vector3 candidate = raycastHit.point;
                     if (candidate.y >= settings.layers[i].minHeight && candidate.y <= settings.layers[i].maxHeight){
-                        Debug.Log(candidate);
+                        //Debug.Log(candidate);
                         DetailsSettings.Layer layer = settings.layers[i];
                         GameObject toPlace = layer.prefabs[Random.Range(0, layer.prefabs.Length)];
                         

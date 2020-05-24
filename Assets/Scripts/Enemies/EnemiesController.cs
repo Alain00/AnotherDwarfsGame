@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemiesController : MonoBehaviour
 {
     public static EnemiesController main;
+    public int wavesCount = 5;
     public float waveTime = 120;
     public float restTime = 30;
     public int maxEnemiesCountBase = 10;
@@ -13,12 +14,13 @@ public class EnemiesController : MonoBehaviour
     [Header("Per Wave Settings")]
     public Vector2 increaseWaveTimeRange = new Vector2(10, 15);
     public float enemiesSpawDecreaseFraction = 3;
-    
     public Vector2 increaseEnemiesHealthRange = new Vector2(0,0);
-
+    [Header("Debug")]
+    public int aproxSpawersCount = 0;
+    [ReadOnly] public int[] aproxEnemiesCountPerWave;
     public bool debug;
     
-    int waveCount = 0;
+    int waveProgress = 0;
     List<EnemySpawer> spawers = new List<EnemySpawer>();
     int enemiesSpawed = 0;
     int enemiesAlive = 0;
@@ -30,7 +32,20 @@ public class EnemiesController : MonoBehaviour
         main = this;
     }
 
+    void OnValidate(){
+        // Debug.Log("Hola");
+        aproxEnemiesCountPerWave = new int[wavesCount];
+        float delay = enemiesSpawDelayBase;
+        for (int i = 0; i < wavesCount; i++){
+            int aproxEnemiesCount = Mathf.FloorToInt((waveTime + delay) / delay * aproxSpawersCount);
+            aproxEnemiesCountPerWave[i] = aproxEnemiesCount;
+            delay -= delay / enemiesSpawDecreaseFraction;
+        }
+        //aproxEnemiesCountNextWave = (int) waveTime / (int)(enemiesSpawDelayBase - enemiesSpawDelayBase / enemiesSpawDecreaseFraction) * aproxSpawersCount;
+    }
+
     void Start(){
+        resting = true;
         timeToNextWave = Time.time + restTime;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -45,7 +60,7 @@ public class EnemiesController : MonoBehaviour
                 NextWave();
                 resting = false;
             }
-        }else{
+        }else if (!resting){
             UpdateWave();
         }
     }
@@ -62,12 +77,12 @@ public class EnemiesController : MonoBehaviour
     }
 
     void NextWave(){
-        waveCount++;
+        waveProgress++;
         
         timeToNextWave = Time.time + waveTime;
         waveTime += Random.Range(increaseWaveTimeRange.x, increaseWaveTimeRange.y);
-        enemiesSpawDelayBase /= enemiesSpawDecreaseFraction;
-        enemiesSpawDelayVariation /= enemiesSpawDecreaseFraction;
+        enemiesSpawDelayBase -= enemiesSpawDelayBase/enemiesSpawDecreaseFraction;
+        enemiesSpawDelayVariation = enemiesSpawDelayVariation/enemiesSpawDecreaseFraction;
     }
 
     public void RegisterSpawer(EnemySpawer spawer){
@@ -89,7 +104,7 @@ public class EnemiesController : MonoBehaviour
     void OnGUI(){
         if (!debug) return;
         GUILayout.Label("Resting: " + resting.ToString());
-        GUILayout.Label("Wave Count: " + waveCount);
+        GUILayout.Label("Wave Count: " + waveProgress);
         GUILayout.Label("Time to next Wave: " + (timeToNextWave - Time.time).ToString());
         GUILayout.Label("Spawers Count: " + spawers.Count);
         GUILayout.Label("Enemies Spawed: " + enemiesSpawed);

@@ -25,7 +25,7 @@ public class BulletHolder : MonoBehaviour
     void OnTriggerEnter (Collider col) {
         if(col.gameObject.tag != "Player"){
             if(col.gameObject.tag == "Enemy"){
-                col.gameObject.GetComponent<Destructible>().OnDamage(30);
+                col.gameObject.GetComponent<Destructible>().OnDamage(50);
             }
             Debug.Log("Collision");
             Instantiate(ImpactVFX , transform.position , Quaternion.identity);
