@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Botiquin.cs" />
+     <Compile Include="Assets\FollowPlayer.cs" />
      <Compile Include="Assets\Granade.cs" />
      <Compile Include="Assets\Pathfinding\AgentPathFinding.cs" />
      <Compile Include="Assets\Pathfinding\BinaryTree.cs" />

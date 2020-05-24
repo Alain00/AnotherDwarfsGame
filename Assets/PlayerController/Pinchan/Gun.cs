@@ -19,6 +19,8 @@ public class Gun : MonoBehaviour
     public float BulletRangeY;
     public float ShakeDuration;
     public float ShakeStrenght;
+    public bool Comprada;
+
     public void Start(){
         ChargerLeft = Charger;
         Ammo -= Charger;
