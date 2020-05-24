@@ -53,6 +53,8 @@
      <Compile Include="Assets\PlayerController\Pinchan\Gun.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Item.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Enemies\CharacterMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\CameraControls.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\CircularGradient.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\CircularGradientSettings.cs" />
