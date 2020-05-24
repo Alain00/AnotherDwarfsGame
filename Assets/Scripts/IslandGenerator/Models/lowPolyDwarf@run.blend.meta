@@ -21,7 +21,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
       copied configuration does not match position in animation file:\n\t'LegLeft'
-      : position error = 1.269145 mm\n"
+      : position error = 1.269154 mm\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Scene' has import animation warnings that might
       lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
@@ -45,8 +45,8 @@ ModelImporter:
       name: run
       takeName: Scene
       internalID: 0
-      firstFrame: 1
-      lastFrame: 32
+      firstFrame: 24
+      lastFrame: 52
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -54,7 +54,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -69,7 +69,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 24
     isReadable: 0
   meshes:
     lODScreenPercentages: []

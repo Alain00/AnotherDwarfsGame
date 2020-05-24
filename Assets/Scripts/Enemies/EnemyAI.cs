@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
         public float cooldown = 1;
         public float animationOffset = 0.5f;
         public float damage = 10;
+        public float distance = 2;
     }
 
     public Transform target;
@@ -17,6 +18,8 @@ public class EnemyAI : MonoBehaviour
     public float minSpeed;
     public float maxSpeed;
     public AttackSettings[] attacks;
+    public Transform attackOrigin;
+    public LayerMask attackFilter;
     CharacterMovement characterMovement;
     float speed;
     float nexAttack = 0;
@@ -59,9 +62,23 @@ public class EnemyAI : MonoBehaviour
         AttackSettings settings = attacks[attackIndex];
         nexAttack = Time.time + settings.cooldown;
         yield return new WaitForSeconds(settings.animationOffset);
-
+        RaycastHit hit;
+        if (Physics.Raycast(attackOrigin.position, attackOrigin.forward, out hit,settings.distance, attackFilter)){
+            //Hit the player
+        }
         animator.SetInteger("attack", 0);
         Debug.Log("Success attack");
+    }
+
+    void OnDrawGizmosSelected(){
+        if (attacks.Length == 0) return;
+        Vector3 position = attackOrigin.position;
+        for (int i = 0; i < attacks.Length; i++){
+            float colorValue = (float)i/attacks.Length;
+            Gizmos.color = new Color(colorValue, colorValue, colorValue);
+            Gizmos.DrawRay(position, attackOrigin.forward * attacks[i].distance);
+            position.y += 0.2f;
+        }
     }
 
 }
