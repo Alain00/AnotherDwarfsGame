@@ -19,11 +19,13 @@ public class PlayerController : MonoBehaviour
     int indice;
     Gun CurrentGun;
     float CoolDown;
-
-    //ItemsStuff
-
     public List <Gun> Weapons = new List<Gun>();
 
+    //ItemsStuff
+    public List<Item> RightHand = new List<Item>();
+    int itemIndice;
+    Item CurrentItem;
+   
     void Start()
     {
         CoolDown = 0;
@@ -39,6 +41,9 @@ public class PlayerController : MonoBehaviour
             }    
         }
         CurrentGun = Weapons[0];
+        
+        RightHand.AddRange(GetComponentsInChildren<Item>());
+        CurrentItem = RightHand[0];
     }
 
     
@@ -46,26 +51,29 @@ public class PlayerController : MonoBehaviour
     {
         MoveTo.x = Input.GetAxisRaw("Horizontal");
         MoveTo.z = Input.GetAxisRaw("Vertical");
-        bool firing = Input.GetButton("Fire1");
         time -= Time.deltaTime;
         
 
         if(Input.GetKeyDown(KeyCode.Q)){
             ChangeWeapon(1);
         }
-        
-        if (firing){
-            CalculateFireRotation();
-        }else{
-            if(MoveTo.x != 0 || MoveTo.z != 0 )
+        if(Input.GetKeyDown(KeyCode.E)){
+            ChangeItemRightHand(1);
+        }
+       if(MoveTo.x != 0 || MoveTo.z != 0 )
                 if(time <= 0){
                     LookDir = Quaternion.LookRotation( (rB.position + MoveTo * movementSpeed) - rB.position );
                 }
-        }
         
         CoolDown -= Time.deltaTime;
-        if(firing && CoolDown <= 0){
-            Shot();
+        if(Input.GetButton("Fire1") ){
+            OnClickLookDir();
+            if (CoolDown <= 0)
+                Shot();
+        }
+        else if (Input.GetButtonDown("Fire2")){
+            OnClickLookDir();
+            ItemAction();
         }  
 
         LookDir.x = 0;
@@ -78,25 +86,27 @@ public class PlayerController : MonoBehaviour
         rB.MovePosition(PosToMove );
     }
 
-    void Shot(){
+    void OnClickLookDir(){
+       Ray ray =  Camera.main.ScreenPointToRay(Input.mousePosition);
+       Plane plane = new Plane(Vector3.up , Player.transform.position);
+       RaycastHit hit;
+       
+       if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000 ))
+            LookDir = Quaternion.LookRotation(hit.point - Player.transform.position);        
         time = 1f;
-        // Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
+        Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
+    }
+
+    void Shot(){
         CurrentGun.Shot(Player.transform , LookDir);
         CoolDown = CurrentGun.FireCadencia;
     }
 
-    void CalculateFireRotation(){
-        Ray ray =  Camera.main.ScreenPointToRay(Input.mousePosition);
-        float HitDist;
-        Plane plane = new Plane(Vector3.up , Player.transform.position);
-        RaycastHit hit;
-       
-        if (Physics.Raycast(ray.origin , ray.direction , out hit , 1000 )){
-            LookDir = Quaternion.LookRotation(hit.point - Player.transform.position);
-        } 
+    void ItemAction(){
+        CurrentItem.ItemAction(LookDir);
     }
 
-    void ChangeWeapon( int oper ){
+    void ChangeWeapon(int oper){
         Weapons[indice].gameObject.SetActive(false);
         if(oper == 1)
             indice++;
@@ -111,5 +121,24 @@ public class PlayerController : MonoBehaviour
     }
     public void AddWeapon(Gun ToAdd){
             Weapons.Add(ToAdd);
+    }
+
+   void ChangeItemRightHand(int oper){
+        RightHand[itemIndice].gameObject.SetActive(false);
+        if(oper == 1)
+            itemIndice++;
+        else itemIndice--;
+        if(itemIndice == RightHand.Count)
+            itemIndice = 0;
+        if(itemIndice < 0)
+            itemIndice = RightHand.Count - 1;
+
+        CurrentItem = RightHand[itemIndice];            
+        RightHand[itemIndice].gameObject.SetActive(true);
+    }
+
+
+    public void AddItemRightHand (Item ToAdd){
+        RightHand.Add(ToAdd);
     }
 }
