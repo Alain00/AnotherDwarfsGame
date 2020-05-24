@@ -48,6 +48,7 @@ public class IslandGenerator : MonoBehaviour
         var trianglesTwo = new List<int>();
         var trianglesAll = new List<int>();
         var vertices = new List<Vector3>();
+        var verticesCollider = new List<Vector3>();
         var axisA = new Vector3(Vector3.up.y, Vector3.up.z, Vector3.up.x);
         var axisB = Vector3.Cross(Vector3.up, axisA);
 
@@ -68,7 +69,9 @@ public class IslandGenerator : MonoBehaviour
                 colors.Add(colorGenerator.Calculate(elevationNormalized));
                 
                 Vector3 point = Vector3.up + (x - .5f) * 2 * axisA + (z - .5f) * 2 * axisB;
-                point.y = elevation + Random.Range(-1f, 1f) * lowPolyEffect;
+                point.y = elevation;
+                verticesCollider.Add(point);
+                point.y += Random.Range(-1f, 1f) * lowPolyEffect;
                 point.x += Random.Range(-1f, 1f) * lowPolyEffect;
                 point.z += Random.Range(-1f, 1f) * lowPolyEffect;
                 vertices.Add(point);
@@ -106,7 +109,7 @@ public class IslandGenerator : MonoBehaviour
             meshCollider.sharedMesh = new Mesh();
         }
         var colliderMesh = meshCollider.sharedMesh;
-        colliderMesh.vertices = vertices.ToArray();
+        colliderMesh.vertices = verticesCollider.ToArray();
         
         colliderMesh.triangles = trianglesAll.ToArray();
         colliderMesh.RecalculateNormals();

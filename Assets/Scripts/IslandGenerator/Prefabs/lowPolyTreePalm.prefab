@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8564810276086666914, guid: e85993bb23786b745ac032aef624c314,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -7780803116198607708, guid: e85993bb23786b745ac032aef624c314,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e85993bb23786b745ac032aef624c314,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,10 +72,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1372576893557268063, guid: e85993bb23786b745ac032aef624c314,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: e85993bb23786b745ac032aef624c314,
         type: 3}
       propertyPath: m_Name
-      value: lowPolyTreePalm
+      value: lowPolyTreePalm Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e85993bb23786b745ac032aef624c314,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023901431735192261, guid: e85993bb23786b745ac032aef624c314,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e85993bb23786b745ac032aef624c314, type: 3}
