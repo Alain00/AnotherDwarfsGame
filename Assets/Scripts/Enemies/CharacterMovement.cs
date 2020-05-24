@@ -21,7 +21,7 @@ public class CharacterMovement : MonoBehaviour
     Quaternion targetRotation = Quaternion.identity;
 
 
-    void Start(){
+    void Awake(){
         characterController = GetComponent<CharacterController>();
     }
 
