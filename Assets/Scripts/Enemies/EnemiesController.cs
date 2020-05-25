@@ -23,6 +23,7 @@ public class EnemiesController : MonoBehaviour
     int enemiesSpawed = 0;
     int enemiesAlive = 0;
     float timeToNextWave = 0;
+    bool resting = false;
     Transform playerTransform;
 
     void Awake(){
@@ -37,7 +38,13 @@ public class EnemiesController : MonoBehaviour
     void Update(){
         if (Time.time > timeToNextWave){
             if (enemiesAlive > 0) return;
-            NextWave();
+            if (!resting){
+                resting = true;
+                timeToNextWave = Time.time + restTime;
+            }else{
+                NextWave();
+                resting = false;
+            }
         }else{
             UpdateWave();
         }
@@ -57,8 +64,7 @@ public class EnemiesController : MonoBehaviour
     void NextWave(){
         waveCount++;
         
-        timeToNextWave = Time.time + waveTime
-            + restTime;
+        timeToNextWave = Time.time + waveTime;
         waveTime += Random.Range(increaseWaveTimeRange.x, increaseWaveTimeRange.y);
         enemiesSpawDelayBase /= enemiesSpawDecreaseFraction;
         enemiesSpawDelayVariation /= enemiesSpawDecreaseFraction;

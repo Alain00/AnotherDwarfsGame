@@ -14,6 +14,7 @@ public class EnemySpawer : MonoBehaviour
 
 
     void Start(){
+        if (!EnemiesController.main) return;
         EnemiesController.main.RegisterSpawer(this);
     }
 
