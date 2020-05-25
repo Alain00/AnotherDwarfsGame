@@ -31,6 +31,7 @@ public class BulletHolder : MonoBehaviour
             Instantiate(ImpactVFX , transform.position , Quaternion.identity);
             Destroy(gameObject);
         }
+     Debug.Log("Collision");
     }
 
 }
