@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
         RightHand.AddRange(GetComponentsInChildren<Item>());
         if(RightHand.Count > 0)
             CurrentItem = RightHand[0];
-
         //Ponerlo en una posicion pegada al suelo
         SetPosInWorld Pos = SetPosInWorld.instance;
         transform.position =  Pos.SetPos(transform.position);
@@ -103,6 +102,7 @@ public class PlayerController : MonoBehaviour
     {
         speed = Mathf.Clamp(speed, 0, 1);
         anim.SetFloat("speed",speed);
+        
     }
 
     void FixedUpdate(){
@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
        RaycastHit hit;
        
        if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000 ))
-            LookDir = Quaternion.LookRotation(hit.point - CurrentGun.ShotPoint.position);        
+            LookDir = Quaternion.LookRotation(hit.point - CurrentGun.ShotPoint.position + Vector3.up * 2);        
         time = 1f;
         Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
     }
