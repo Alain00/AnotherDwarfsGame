@@ -112,11 +112,10 @@ public class PlayerController : MonoBehaviour
 
     void OnClickLookDir(){
        Ray ray =  Camera.main.ScreenPointToRay(Input.mousePosition);
-       Plane plane = new Plane(Vector3.up , Player.transform.position);
        RaycastHit hit;
        
        if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000 ))
-            LookDir = Quaternion.LookRotation(hit.point - Player.transform.position);        
+            LookDir = Quaternion.LookRotation(hit.point - CurrentGun.ShotPoint.position);        
         time = 1f;
         Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
     }

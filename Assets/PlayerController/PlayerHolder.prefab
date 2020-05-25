@@ -16338,7 +16338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bda79d58e610b48a4aa63900130878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flash: {fileID: 883607706911560576, guid: 73c2e07dd52014b48aaa489d06c8852c, type: 3}
+  Flash: {fileID: 350833665374716553, guid: d8ab414f9c0ed7c49a5803747d56bb8a, type: 3}
   Bullet: {fileID: 4842412324334938415, guid: eb0034b18a44ea846ab98803126492b5, type: 3}
   ShotPoint: {fileID: 1761748391663876751}
   FireCadencia: 0.7
@@ -22453,7 +22453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bda79d58e610b48a4aa63900130878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flash: {fileID: 883607706911560576, guid: 73c2e07dd52014b48aaa489d06c8852c, type: 3}
+  Flash: {fileID: 3961424789920326848, guid: f4147d0a006368f44b3d613638bba40d, type: 3}
   Bullet: {fileID: 6172916520269166408, guid: c9800dfbee04b4d4a9559c554b4c1902, type: 3}
   ShotPoint: {fileID: 8026914413944004421}
   FireCadencia: 1.5
