@@ -8,8 +8,8 @@ public class NightCont : MonoBehaviour
     public float NightMulti;
     void Start()
     {
-        NightMulti = PlayerPrefs.GetFloat("NightMulti");
-        PlayerPrefs.SetFloat("NightMulti", NightMulti + .3f );
+        NightMulti = PlayerPrefs.GetFloat("LvlCont");
+        PlayerPrefs.SetFloat("LvlCont", NightMulti + .3f );
         NightDuration *= NightMulti + .3f; 
         
     }
@@ -25,6 +25,6 @@ public class NightCont : MonoBehaviour
     void EndLVL(){
         Debug.Log("MissionDONE");
         //Cargar otra scene
-        
+
     }
 }
