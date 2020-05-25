@@ -21,6 +21,7 @@ public abstract class Destructible : MonoBehaviour
     }
 
     public virtual void OnDie(){
-        onDied();
+        if (onDied != null)
+            onDied();
     }
 }
