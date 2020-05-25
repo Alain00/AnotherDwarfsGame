@@ -43,7 +43,7 @@ public class EnemyAI : Destructible
         direction.y = 0;
         float distance = direction.magnitude;
         if (distance >= minDistance){
-            characterMovement.MoveTo(direction.normalized * speed * Time.deltaTime);
+            characterMovement.MoveTo(target.position);
         }else{
             characterMovement.MoveTo(Vector3.zero);
             OrderAttack();

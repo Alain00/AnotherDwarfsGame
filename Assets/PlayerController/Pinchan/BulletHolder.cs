@@ -8,11 +8,34 @@ public class BulletHolder : MonoBehaviour
     Rigidbody Rb;
     public float speed;
     public float AutoDestruct =5;
+    public LayerMask layerMask;
     public GameObject ImpactVFX;
 
     void Start(){
         bullet = GetComponentInChildren<Transform>();
+        StartCoroutine(PerformHit());
     }
+
+    IEnumerator PerformHit(){
+        RaycastHit hit;
+        if (Physics.Raycast(bullet.position, bullet.forward, out hit, 100, layerMask)){
+            //Debug.Log("Hit in something");
+            Collider col = hit.collider;
+            if (!col) yield return null;
+
+            if(col.gameObject.tag != "Player"){
+                float time = (hit.point - transform.position).magnitude / speed;
+                yield return new WaitForSeconds(time);
+                if(col.gameObject.tag == "Enemy"){
+                    col.gameObject.GetComponent<Destructible>().OnDamage(50);
+                }
+                Instantiate(ImpactVFX , hit.point , Quaternion.identity);
+                Destroy(gameObject);
+            }
+            //Debug.Log(col.gameObject.name);
+        } 
+    }
+
     void Update()
     {
 
@@ -21,17 +44,6 @@ public class BulletHolder : MonoBehaviour
             Destroy(gameObject);
         }
         transform.position +=bullet.forward * speed * Time.deltaTime;
-    }
-    void OnTriggerEnter (Collider col) {
-        if(col.gameObject.tag != "Player"){
-            if(col.gameObject.tag == "Enemy"){
-                col.gameObject.GetComponent<Destructible>().OnDamage(50);
-            }
-            Debug.Log("Collision");
-            Instantiate(ImpactVFX , transform.position , Quaternion.identity);
-            Destroy(gameObject);
-        }
-     Debug.Log("Collision");
     }
 
 }

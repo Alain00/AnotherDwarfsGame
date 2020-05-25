@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class IslandGenerator : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class IslandGenerator : MonoBehaviour
     public NoiseSettings noiseSettings;
     public ColorSettings colorSettings;
     public DetailsSettings detailsSettings;
+    public NavMeshSurface navMeshSurface;
 
     
     DetailsGenerator detailsGenerator;
@@ -115,6 +117,7 @@ public class IslandGenerator : MonoBehaviour
         colliderMesh.RecalculateNormals();
         meshCollider.sharedMesh = colliderMesh;
         
+        navMeshSurface.BuildNavMesh();
     }
 
     void OnDrawGizmos(){

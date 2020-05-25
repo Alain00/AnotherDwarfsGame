@@ -35,11 +35,13 @@ public class EnemiesController : MonoBehaviour
     void OnValidate(){
         // Debug.Log("Hola");
         aproxEnemiesCountPerWave = new int[wavesCount];
+        float currentWaveTime = waveTime;
         float delay = enemiesSpawDelayBase;
         for (int i = 0; i < wavesCount; i++){
-            int aproxEnemiesCount = Mathf.FloorToInt((waveTime + delay) / delay * aproxSpawersCount);
+            int aproxEnemiesCount = Mathf.FloorToInt((currentWaveTime + delay) / delay * aproxSpawersCount);
             aproxEnemiesCountPerWave[i] = aproxEnemiesCount;
             delay -= delay / enemiesSpawDecreaseFraction;
+            currentWaveTime += increaseWaveTimeRange.y;
         }
         //aproxEnemiesCountNextWave = (int) waveTime / (int)(enemiesSpawDelayBase - enemiesSpawDelayBase / enemiesSpawDecreaseFraction) * aproxSpawersCount;
     }

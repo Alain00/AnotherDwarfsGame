@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class CharacterMovement : MonoBehaviour
 {
     public bool onlyRotateY = true;
     public Animator animator;
-    CharacterController characterController;
-    Vector3 lastDirection = Vector3.zero;
-    Vector3 currentDirection = Vector3.zero;
-    Vector3 lastPosition = Vector3.zero;
+    NavMeshAgent agent;
     public float speedChangeSpeed = 2;
     public float rotationChangeSpeed = 5;
     float gravityForce = 20.0f;
@@ -19,21 +17,17 @@ public class CharacterMovement : MonoBehaviour
     float targetSpeedPorcent = 0;
     Quaternion currentRotation = Quaternion.identity;
     Quaternion targetRotation = Quaternion.identity;
-
+    Vector3 destination;
 
     void Awake(){
-        characterController = GetComponent<CharacterController>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
-    public void MoveTo(Vector3 direction){
-        if (direction == Vector3.zero){
-            targetSpeedPorcent = 0;
-        }else{
+    public void MoveTo(Vector3 newDestination){
+        if (newDestination != Vector3.zero){
             targetSpeedPorcent = 1;
         }
-        movingTime += Time.deltaTime;
-        direction.y = -gravityForce;
-        lastDirection = direction;
+        destination = newDestination;
     }
 
     public void RotateTo(Vector3 direction){
@@ -60,14 +54,7 @@ public class CharacterMovement : MonoBehaviour
         transform.rotation = currentRotation;
         
         UpdateAnimator();
-    }
-
-    void FixedUpdate(){
-        characterController.Move(lastDirection);
-    }
-
-    void LateUpdate(){
-        lastPosition = transform.position;
+        agent.SetDestination(destination);
     }
 
     void UpdateAnimator(){

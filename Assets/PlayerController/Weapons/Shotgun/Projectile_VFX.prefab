@@ -49,6 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   AutoDestruct: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1847
   ImpactVFX: {fileID: 8864044355771098598, guid: d855bb2562c8cc746854fe0776f80e19,
     type: 3}
 --- !u!65 &7588797340530420236
