@@ -7,6 +7,9 @@ public abstract class Destructible : MonoBehaviour
     public float health = 100;
     public float maxHealth = 100;
     bool died;
+
+    public delegate void OnDied();
+    public event OnDied onDied;
     public virtual void OnDamage(float damage){
         if (died) return;
 
@@ -17,5 +20,7 @@ public abstract class Destructible : MonoBehaviour
         }
     }
 
-    public abstract void OnDie();
+    public virtual void OnDie(){
+        onDied();
+    }
 }

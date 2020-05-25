@@ -23,7 +23,7 @@ public class EnemyAI : Destructible
     CharacterMovement characterMovement;
     float speed;
     float nexAttack = 0;
-    bool died = false;
+    bool hasDied = false;
     Animator animator;
 
     void Start(){
@@ -33,7 +33,7 @@ public class EnemyAI : Destructible
     }
 
     void Update(){
-        if (died) return;
+        if (hasDied) return;
         FollowTarget();
     }
 
@@ -84,6 +84,7 @@ public class EnemyAI : Destructible
     }
 
     public override void OnDie(){
+        base.OnDie();
         characterMovement.enabled = false;
         animator.SetBool("died", true);
         Destroy(gameObject, 10);
