@@ -42,11 +42,16 @@ public class PlayerController : MonoBehaviour
         //Coger todas las armas
         Weapons.AddRange(GetComponentsInChildren<Gun>());
         CurrentGun = Weapons[0];
-        anim.SetInteger("Weapon" , 1);
+        anim.SetInteger("weapon" , 1);
         
         RightHand.AddRange(GetComponentsInChildren<Item>());
         if(RightHand.Count > 0)
             CurrentItem = RightHand[0];
+
+        //Ponerlo en una posicion pegada al suelo
+        SetPosInWorld Pos = SetPosInWorld.instance;
+        transform.position =  Pos.SetPos(transform.position);
+
     }
 
     
@@ -138,7 +143,7 @@ public class PlayerController : MonoBehaviour
         while(Weapons[indice].Comprada == false);    
         CurrentGun = Weapons[indice];            
         Weapons[indice].gameObject.SetActive(true);
-        anim.SetInteger("Weapon", indice + 1);
+        anim.SetInteger("weapon", indice + 1);
     }
     public void AddWeapon(Gun ToAdd){
             Weapons.Add(ToAdd);

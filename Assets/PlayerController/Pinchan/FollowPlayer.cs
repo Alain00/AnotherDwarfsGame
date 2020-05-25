@@ -10,6 +10,7 @@ public class FollowPlayer : MonoBehaviour
     
     void Start()
     {
+        transform.parent = null;
         //Tu tranquilo q esto de aca abajo encuentra el transform q hace falta
         player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Collider>().gameObject.transform;
     }

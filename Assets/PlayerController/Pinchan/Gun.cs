@@ -53,7 +53,7 @@ public class Gun : MonoBehaviour
                                                 ));
                     GameObject CurrentBullet = Instantiate(Bullet , ShotPoint.position , LookDir);
                     GameObject CurrentVFX = Instantiate( Flash , ShotPoint.position , CurrentBullet.transform.rotation , Player.transform);
-                    Destroy(CurrentVFX,5);
+                    Destroy(CurrentVFX,3);
                     i++;
                     if(TimeBThem > 0)
                     yield return new WaitForSeconds(TimeBThem);
