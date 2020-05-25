@@ -27,6 +27,7 @@ public class BulletHolder : MonoBehaviour
             if(col.gameObject.tag == "Enemy"){
                 col.gameObject.GetComponent<Destructible>().OnDamage(25);
             }
+            Debug.Log("Collision");
             Instantiate(ImpactVFX , transform.position , Quaternion.identity);
             Destroy(gameObject);
         }
