@@ -147,13 +147,13 @@ public class PlayerController : MonoBehaviour
    void ChangeItemRightHand(){
         RightHand[itemIndice].gameObject.SetActive(false);
         do{
-            indice++;
-            if(indice == RightHand.Count)
-                indice = 0;
-            if(indice < 0)
-             indice = RightHand.Count - 1;
+            itemIndice++;
+            if(itemIndice == RightHand.Count)
+                itemIndice = 0;
+            if(itemIndice < 0)
+             itemIndice = RightHand.Count - 1;
         }
-        while(RightHand[indice].Comprada == false);    
+        while(RightHand[itemIndice].Comprada == false);    
         CurrentItem = RightHand[itemIndice];            
         RightHand[itemIndice].gameObject.SetActive(true);
     }

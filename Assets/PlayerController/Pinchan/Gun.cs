@@ -22,6 +22,7 @@ public class Gun : MonoBehaviour
     public bool Comprada;
 
     public void Start(){
+        DontDestroyOnLoad(this);
         ChargerLeft = Charger;
         Ammo -= Charger;
         Random.InitState(System.DateTime.Now.Millisecond);
