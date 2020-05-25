@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterMovement))]
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : Destructible
 {
     [System.Serializable]
     public class AttackSettings{
@@ -23,6 +23,7 @@ public class EnemyAI : MonoBehaviour
     CharacterMovement characterMovement;
     float speed;
     float nexAttack = 0;
+    bool died = false;
     Animator animator;
 
     void Start(){
@@ -32,6 +33,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     void Update(){
+        if (died) return;
         FollowTarget();
     }
 
@@ -79,6 +81,12 @@ public class EnemyAI : MonoBehaviour
             Gizmos.DrawRay(position, attackOrigin.forward * attacks[i].distance);
             position.y += 0.2f;
         }
+    }
+
+    public override void OnDie(){
+        characterMovement.enabled = false;
+        animator.SetBool("died", true);
+        Destroy(gameObject, 10);
     }
 
 }
