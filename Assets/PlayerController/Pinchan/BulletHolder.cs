@@ -25,7 +25,7 @@ public class BulletHolder : MonoBehaviour
     void OnTriggerEnter (Collider col) {
         if(col.gameObject.tag != "Player"){
             if(col.gameObject.tag == "Enemy"){
-                col.gameObject.GetComponent<Enemy>().Health--;
+                col.gameObject.GetComponent<Destructible>().OnDamage(25);
             }
             Instantiate(ImpactVFX , transform.position , Quaternion.identity);
             Destroy(gameObject);
