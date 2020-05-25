@@ -88,7 +88,7 @@ public class EnemiesController : MonoBehaviour
 
     void OnGUI(){
         if (!debug) return;
-
+        GUILayout.Label("Resting: " + resting.ToString());
         GUILayout.Label("Wave Count: " + waveCount);
         GUILayout.Label("Time to next Wave: " + (timeToNextWave - Time.time).ToString());
         GUILayout.Label("Spawers Count: " + spawers.Count);
