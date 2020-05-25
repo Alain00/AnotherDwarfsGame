@@ -19,7 +19,10 @@ public class Gun : MonoBehaviour
     public float BulletRangeY;
     public float ShakeDuration;
     public float ShakeStrenght;
+    public bool Comprada;
+
     public void Start(){
+        DontDestroyOnLoad(this);
         ChargerLeft = Charger;
         Ammo -= Charger;
         Random.InitState(System.DateTime.Now.Millisecond);

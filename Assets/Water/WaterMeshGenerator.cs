@@ -44,7 +44,7 @@ public class WaterMeshGenerator : MonoBehaviour
         return _mesh;
     }
 
-    void OnDrawGizmosSelected(){
+    void OnDrawGizmos(){
         Gizmos.color = Color.blue;
         Gizmos.DrawCube(transform.position, new Vector3(CellSize, 1, CellSize));
     }

@@ -12,7 +12,8 @@ public class CameraShake : MonoBehaviour
     public bool ShouldShake;
     public Vector3 startposition;
     float startduration;
-    bool Once;
+    CameraController cameraController;
+   
     void Awake(){
         if(instance == null)
              instance = this;
@@ -21,11 +22,10 @@ public class CameraShake : MonoBehaviour
     void Start()
     {
         camara = Camera.main;
-        //startposition*= 0;
+        cameraController = camara.GetComponent<CameraController>();
         startduration = duration;
         ShouldShake = false;
-        Once = true;
-       // startposition = camara.transform.position;
+        startposition = camara.transform.localPosition;
     }
 
     void Update()
@@ -33,13 +33,12 @@ public class CameraShake : MonoBehaviour
         if(ShouldShake){
             if(duration > 0){
                 duration -= Time.deltaTime * SlowDownAmount;
-                camara.transform.localPosition = startposition + Random.insideUnitSphere * power;
+                camara.transform.localPosition = startposition + (Vector3)Random.insideUnitCircle * power;
             }
             else{
                // camara.transform.position =  startposition;
                 duration =  startduration;
                 ShouldShake = false;
-                Once = true;
          }
         }
        

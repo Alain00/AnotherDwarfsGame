@@ -41,16 +41,12 @@ public class PlayerController : MonoBehaviour
         time = 1;
         //Coger todas las armas
         Weapons.AddRange(GetComponentsInChildren<Gun>());
-        for(int i = 0 ; i < Weapons.Count ; i++){
-            if(!Weapons[i].gameObject.activeSelf){
-                Weapons.Remove(Weapons[i]);
-                i--;
-            }    
-        }
         CurrentGun = Weapons[0];
+        anim.SetInteger("Weapon" , 1);
         
         RightHand.AddRange(GetComponentsInChildren<Item>());
-        CurrentItem = RightHand[0];
+        if(RightHand.Count > 0)
+            CurrentItem = RightHand[0];
     }
 
     
@@ -62,10 +58,10 @@ public class PlayerController : MonoBehaviour
         
 
         if(Input.GetKeyDown(KeyCode.Q)){
-            ChangeWeapon(1);
+            ChangeWeapon();
         }
         if(Input.GetKeyDown(KeyCode.E)){
-            ChangeItemRightHand(1);
+            ChangeItemRightHand();
         }
 
         if (MoveTo.x != 0 || MoveTo.z != 0)
@@ -129,33 +125,35 @@ public class PlayerController : MonoBehaviour
         CurrentItem.ItemAction(LookDir);
     }
 
-    void ChangeWeapon(int oper){
+    void ChangeWeapon(){
         Weapons[indice].gameObject.SetActive(false);
-        if(oper == 1)
+            
+        do{
             indice++;
-        else indice--;
-        if(indice == Weapons.Count)
-            indice = 0;
-        if(indice < 0)
-            indice = Weapons.Count - 1;
-
+            if(indice == Weapons.Count)
+                indice = 0;
+            if(indice < 0)
+             indice = Weapons.Count - 1;
+        }
+        while(Weapons[indice].Comprada == false);    
         CurrentGun = Weapons[indice];            
         Weapons[indice].gameObject.SetActive(true);
+        anim.SetInteger("Weapon", indice + 1);
     }
     public void AddWeapon(Gun ToAdd){
             Weapons.Add(ToAdd);
     }
 
-   void ChangeItemRightHand(int oper){
+   void ChangeItemRightHand(){
         RightHand[itemIndice].gameObject.SetActive(false);
-        if(oper == 1)
+        do{
             itemIndice++;
-        else itemIndice--;
-        if(itemIndice == RightHand.Count)
-            itemIndice = 0;
-        if(itemIndice < 0)
-            itemIndice = RightHand.Count - 1;
-
+            if(itemIndice == RightHand.Count)
+                itemIndice = 0;
+            if(itemIndice < 0)
+             itemIndice = RightHand.Count - 1;
+        }
+        while(RightHand[itemIndice].Comprada == false);    
         CurrentItem = RightHand[itemIndice];            
         RightHand[itemIndice].gameObject.SetActive(true);
     }
