@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
        RaycastHit hit;
        
        if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000 ))
-            LookDir = Quaternion.LookRotation( (hit.point + Vector3.up * 2 ) - CurrentGun.ShotPoint.position);        
+            LookDir = Quaternion.LookRotation( (hit.point  ) - CurrentGun.ShotPoint.position);        
         time = 1f;
         Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
     }
