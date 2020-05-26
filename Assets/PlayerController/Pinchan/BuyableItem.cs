@@ -15,12 +15,13 @@ public class BuyableItem : MonoBehaviour
     Vector3 StartPos;
     Vector3 StartRot;
   
-
+    Transform ItemMesh;
     void Start()
     {
         StartScale = transform.localScale;
         StartPos = transform.position;
-        StartRot = transform.eulerAngles;
+        ItemMesh = GetComponentInChildren<MeshRenderer>().transform;
+        StartRot = ItemMesh.eulerAngles;
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class BuyableItem : MonoBehaviour
             transform.eulerAngles = Rotation; 
         }
         else {
-         transform.eulerAngles = StartRot; 
+         ItemMesh.eulerAngles = StartRot; 
          transform.position = Vector3.SmoothDamp(transform.position , StartPos , ref Velocity , SmoothSpeed);
         }
     }

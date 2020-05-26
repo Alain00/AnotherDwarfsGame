@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HoverManager : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class HoverManager : MonoBehaviour
     public float RotSpeed;
     bool IsFocusing;
     
+    public Transform[] Items;
+    public string[] Descripcion;
+
+    public GameObject ItemWindow;
+    public Text TextField;
+    public Animator Animator;
     void Start()
     {
         
@@ -18,18 +25,25 @@ public class HoverManager : MonoBehaviour
     void Update()
     {
         if(Input.GetMouseButton(1) && IsFocusing == true){
+            ItemWindow.SetActive(false);
             Current.Focus = false;
             IsFocusing = false;
         }
-
+       
         
         if(Input.GetMouseButton(0)){
             if(LastItem != null){
-                
-                Current.Focus = true;
-                IsFocusing = true;
-                Current.hover = false;
-            
+                if(!Current.Focus){
+                    ItemWindow.SetActive(true);
+                    Animator.SetBool("OpenWindow",true);
+                    for(int i = 0 ; i < Items.Length ; i++)
+                        if(Items[i] == LastItem)
+                            TextField.text = Descripcion[i];   
+                        
+                        Current.Focus = true;
+                        IsFocusing = true;
+                        Current.hover = false;
+                }    
             float RotationY = Input.GetAxis("Mouse Y") * RotSpeed * Mathf.Deg2Rad;
             LastItem.GetComponentInChildren<MeshRenderer>().transform.Rotate(Vector3.up , RotationY);
             }
