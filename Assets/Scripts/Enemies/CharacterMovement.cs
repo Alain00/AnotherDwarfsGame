@@ -17,10 +17,12 @@ public class CharacterMovement : MonoBehaviour
     float targetSpeedPorcent = 0;
     Quaternion currentRotation = Quaternion.identity;
     Quaternion targetRotation = Quaternion.identity;
+    Collider mCollider;
     Vector3 destination;
 
     void Awake(){
         agent = GetComponent<NavMeshAgent>();
+        mCollider = GetComponent<Collider>();
     }
 
     public void MoveTo(Vector3 newDestination){
@@ -55,6 +57,13 @@ public class CharacterMovement : MonoBehaviour
         
         UpdateAnimator();
         agent.SetDestination(destination);
+    }
+
+    void OnDisable(){
+        agent.enabled = false;
+        if (mCollider){
+            mCollider.enabled = false;
+        }
     }
 
     void UpdateAnimator(){

@@ -7,6 +7,7 @@ public class EnemyAI : Destructible
 {
     [System.Serializable]
     public class AttackSettings{
+        public int index = 1;
         public float cooldown = 1;
         public float animationOffset = 0.5f;
         public float damage = 10;
@@ -60,8 +61,8 @@ public class EnemyAI : Destructible
 
     IEnumerator ExecuteAttack(){
         int attackIndex = Random.Range(0, attacks.Length);
-        animator.SetInteger("attack", attackIndex+1);
         AttackSettings settings = attacks[attackIndex];
+        animator.SetInteger("attack", settings.index);
         nexAttack = Time.time + settings.cooldown;
         yield return new WaitForSeconds(settings.animationOffset);
         RaycastHit hit;
