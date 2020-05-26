@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Brother.cs" />
      <Compile Include="Assets\Pathfinding\AgentPathFinding.cs" />
      <Compile Include="Assets\Pathfinding\BinaryTree.cs" />
      <Compile Include="Assets\Pathfinding\Grid.cs" />
@@ -53,7 +54,6 @@
      <Compile Include="Assets\PlayerController\Pinchan\FollowPlayer.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Granade.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Gun.cs" />
-     <Compile Include="Assets\PlayerController\Pinchan\HoverManager.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\InitGame.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Item.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\MenuScript.cs" />
@@ -63,6 +63,7 @@
      <Compile Include="Assets\PlayerController\Pinchan\PlayerStats.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\SetPosInWorld.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\ShipAtHighSpeed.cs" />
+     <Compile Include="Assets\PlayerController\Pinchan\StoreManager.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Torch.cs" />
      <Compile Include="Assets\Scripts\Enemies\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Enemies\Destructible.cs" />

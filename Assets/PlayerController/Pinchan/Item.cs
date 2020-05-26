@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Item : MonoBehaviour
 {
     public bool Comprada;
+    public float Ammo;
     public abstract void ItemAction( Quaternion Dir );
 
 }

@@ -6,7 +6,6 @@ public class Granade : Item
 {
 
   public Rigidbody RB;  
-  public float Ammo;
   public float Radius;
   public bool CanExplode;
   public float ExplodeTime;

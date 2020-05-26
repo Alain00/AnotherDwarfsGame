@@ -6,7 +6,7 @@ public class Botiquin : Item
 {
     public float LifeAmount;
     //public PlayerStats Player;
-    public float Ammo;
+    
     public PlayerStats Stats;
     void Start(){
         Stats = GameObject.FindObjectOfType<PlayerStats>();

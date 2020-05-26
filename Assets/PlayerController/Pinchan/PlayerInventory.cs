@@ -5,12 +5,10 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     
-    int Money;
+    public int Money;
     void Start()
     {
     }
-
-    // Update is called once per frame
     void Update()
     {
         

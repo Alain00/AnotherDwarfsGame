@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Torch : Item
 {
-    public int Ammo;
     public GameObject AntorchaDura;
 
     public override void ItemAction(Quaternion Dir){

@@ -14,14 +14,16 @@ public class BuyableItem : MonoBehaviour
     Vector3 StartScale;
     Vector3 StartPos;
     Vector3 StartRot;
+    public bool Gun;
+    public int AmmoCant;
   
     Transform ItemMesh;
-    void Start()
+    void Awake()
     {
         StartScale = transform.localScale;
-        StartPos = transform.position;
+        StartPos = transform.localPosition;
         ItemMesh = GetComponentInChildren<MeshRenderer>().transform;
-        StartRot = ItemMesh.eulerAngles;
+        StartRot = transform.localEulerAngles;
     }
 
     // Update is called once per frame
@@ -34,11 +36,14 @@ public class BuyableItem : MonoBehaviour
 
         if(Focus){
             transform.localPosition = Vector3.SmoothDamp(transform.localPosition , CamDist , ref Velocity , SmoothSpeed);
-            transform.eulerAngles = Rotation; 
+            Quaternion QRotation = Quaternion.Euler(Rotation);
+            ItemMesh.localRotation =  Quaternion.Slerp(ItemMesh.localRotation , QRotation ,SmoothSpeed) ; 
         }
-        else {
-         ItemMesh.eulerAngles = StartRot; 
-         transform.position = Vector3.SmoothDamp(transform.position , StartPos , ref Velocity , SmoothSpeed);
+        else { 
+         transform.localPosition = Vector3.SmoothDamp(transform.localPosition , StartPos , ref Velocity , SmoothSpeed);
+         Quaternion QRotation = Quaternion.Euler(StartRot);
+         ItemMesh.localRotation =  Quaternion.Slerp(ItemMesh.localRotation , Quaternion.identity ,SmoothSpeed) ;    
+         transform.localRotation = Quaternion.Slerp(transform.localRotation , QRotation ,SmoothSpeed) ;    
         }
     }
 }
