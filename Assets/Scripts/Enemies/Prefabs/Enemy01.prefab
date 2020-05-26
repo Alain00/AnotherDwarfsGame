@@ -61,6 +61,20 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!136 &2080642004
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454058493752139587}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0.06}
 --- !u!114 &988842114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,18 +94,20 @@ MonoBehaviour:
   minSpeed: 10
   maxSpeed: 10
   attacks:
-  - cooldown: 0.5
+  - index: 1
+    cooldown: 0.5
     animationOffset: 0.3
     damage: 10
     distance: 3
-  - cooldown: 0.5
+  - index: 2
+    cooldown: 0.5
     animationOffset: 0.11
     damage: 10
     distance: 3
   attackOrigin: {fileID: 1843935648}
   attackFilter:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
 --- !u!114 &988842115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,20 +146,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
---- !u!136 &2080642004
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6454058493752139587}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: 2, z: 0.06}
 --- !u!1001 &3076100481978664522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169,17 +171,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 06b294833a39879479101e00ca4353d0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 130.3
+      value: -89.152084
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 06b294833a39879479101e00ca4353d0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.4
+      value: 3.6399992
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 06b294833a39879479101e00ca4353d0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -102.7
+      value: -46.173153
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 06b294833a39879479101e00ca4353d0,
         type: 3}
@@ -224,7 +226,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 06b294833a39879479101e00ca4353d0,
         type: 3}
       propertyPath: m_Name
-      value: Enemy01 Variant
+      value: Enemy01
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 06b294833a39879479101e00ca4353d0,
         type: 3}
