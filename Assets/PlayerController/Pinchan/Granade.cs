@@ -5,15 +5,17 @@ using UnityEngine;
 public class Granade : Item
 {
 
-  public Rigidbody RB;  
+  Rigidbody RB;  
   public float Radius;
   public bool CanExplode;
   public float ExplodeTime;
   public GameObject Explosion;
   public float ShakeDuration;
   public float ShakeStrenght;
+  public GameObject GranadeToInstantiate;
+  public Transform Player;
   void Start(){
-      RB = GetComponent<Rigidbody>();
+     
   }
   public override void ItemAction(Quaternion Dir){
 
@@ -33,18 +35,16 @@ public class Granade : Item
       }
   }
   void ThrowGranade(Quaternion Dir){
-      
-      GameObject Current =  Instantiate(gameObject , transform.position + transform.forward , Dir );
+      //Init new Granade
+      GameObject Current =  Instantiate(GranadeToInstantiate , transform.position + Player.forward , Dir );
+      RB = Current.GetComponent<Rigidbody>();
       Granade CurrentGranade =  Current.GetComponent<Granade>();
-      Current.GetComponent<Collider>().enabled = true;
-      CurrentGranade.RB.isKinematic = false;  
-      CurrentGranade.RB.AddForce(Current.transform.forward * 5 + Current.transform.up * 3, ForceMode.Impulse);
+      RB.AddForce(Current.transform.forward * 10 + Current.transform.up * 3 , ForceMode.Impulse);
       CurrentGranade.CanExplode = true;
-      //RB.AddForce();
   }
 
   void Explode(){
-      //Init new Granade
+      
        GameObject CurExplosion = Instantiate(Explosion , transform.position + Vector3.up , Quaternion.identity);
        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
        float Distance = Vector3.Distance(transform.position , player.position);

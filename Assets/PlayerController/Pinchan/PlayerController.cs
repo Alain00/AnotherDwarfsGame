@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     Gun CurrentGun;
     float CoolDown;
     public List <Gun> Weapons = new List<Gun>();
+    public Text AmmoField;
 
     //ItemsStuff
     public List<Item> RightHand = new List<Item>();
@@ -100,6 +102,12 @@ public class PlayerController : MonoBehaviour
         LookDir.x = 0;
         LookDir.z = 0;
         Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , (7f * Time.deltaTime));     
+
+        if(CurrentGun == Weapons[0])
+            AmmoField.text = CurrentGun.ChargerLeft.ToString() + "/";
+        else AmmoField.text = CurrentGun.ChargerLeft.ToString() + "/" + CurrentGun.Ammo.ToString();
+    
+    
     }
 
     private void LateUpdate()

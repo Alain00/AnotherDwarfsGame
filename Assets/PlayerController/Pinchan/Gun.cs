@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Gun : MonoBehaviour
      public int Ammo;
      public int Charger;
      [SerializeField]
-     int ChargerLeft;
+    public int ChargerLeft;
 
     public int BulletsPerShot;
     public float TimeBThem;
@@ -20,6 +21,7 @@ public class Gun : MonoBehaviour
     public float ShakeDuration;
     public float ShakeStrenght;
     public bool Comprada;
+    
 
     public void Start(){
         DontDestroyOnLoad(this);
@@ -32,6 +34,7 @@ public class Gun : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R)){
             Reload();
         }
+        
     }
     public void Shot(Transform Player , Quaternion LookDir){
        
