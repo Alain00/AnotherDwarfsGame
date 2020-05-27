@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Botiquin Whit 1
+  m_Name: Botiquin Whit 5
   m_Shader: {fileID: -6465566751694194690, guid: 11fe18b3e84e7b1409460e37b15b225e,
     type: 3}
   m_ShaderKeywords: 
@@ -85,7 +85,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_C51DEAFD: {r: 0.027028197, g: 0.36037597, b: 0, a: 0}
-    - Color_F50AA101: {r: 0.0077874744, g: 0.23584908, b: 0.0077874744, a: 0}
+    - Color_F50AA101: {r: 0.3490566, g: 0.21868606, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
