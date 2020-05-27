@@ -49,9 +49,8 @@ public class Gun : MonoBehaviour
                     LookDir = Quaternion.Euler(new Vector3(
                                                 LookDir.eulerAngles.x + Random.Range(-BulletRangeX,BulletRangeX)
                                                 ,LookDir.eulerAngles.y + Random.Range(-BulletRangeY,BulletRangeY)
-                                                ,LookDir.z));
-                    //Vector3 direction = LookDir * ShotPoint.forward;
-
+                                                ,LookDir.z
+                                                ));
                     
                     GameObject CurrentBullet = Instantiate(Bullet , ShotPoint.position , LookDir);
                     GameObject CurrentVFX = Instantiate( Flash , ShotPoint.position , CurrentBullet.transform.rotation , Player.transform);
