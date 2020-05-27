@@ -10,7 +10,7 @@ public class Brother : MonoBehaviour
     public GameObject Store;
     FollowPlayer CameraController;
     public GameObject Player;
-    void Start()
+    void Awake()
     {
         transform.position =  SetPosInWorld.instance.SetPos(transform.position);
         player = GameObject.FindGameObjectWithTag("Player").transform;
