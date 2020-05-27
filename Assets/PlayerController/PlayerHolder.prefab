@@ -1185,7 +1185,7 @@ MonoBehaviour:
   BulletsPerShot: 3
   TimeBThem: 0.2
   BulletRangeX: 0
-  BulletRangeY: 10
+  BulletRangeY: 0
   ShakeDuration: 0.3
   ShakeStrenght: 0.3
   Comprada: 1
@@ -2290,7 +2290,7 @@ MonoBehaviour:
   BulletsPerShot: 5
   TimeBThem: 0
   BulletRangeX: 0
-  BulletRangeY: 20
+  BulletRangeY: 10
   ShakeDuration: 0.3
   ShakeStrenght: 1
   Comprada: 1
