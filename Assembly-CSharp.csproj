@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\BarProgress.cs" />
      <Compile Include="Assets\Brother.cs" />
      <Compile Include="Assets\Pathfinding\AgentPathFinding.cs" />
      <Compile Include="Assets\Pathfinding\BinaryTree.cs" />

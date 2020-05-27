@@ -10,6 +10,10 @@ public class PlayerStats : MonoBehaviour
     {
         CurHealth = MaxHealth;
     }
+    public void Update(){
+        if(Input.GetKeyDown(KeyCode.V))
+            ReciveDamage(1);
+    }
     public void ReciveDamage(float Damage){
         CurHealth -= Damage;
     }
