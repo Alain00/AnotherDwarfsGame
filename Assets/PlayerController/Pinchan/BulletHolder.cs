@@ -19,6 +19,12 @@ public class BulletHolder : MonoBehaviour
     IEnumerator PerformHit(){
         RaycastHit hit;
         if (Physics.Raycast(bullet.position, bullet.forward, out hit, 100, layerMask)){
+            GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            //Instantiate(go, hit.point, Quaternion.identity);
+            go.name = "HitPoint";
+            go.transform.position = hit.point;
+            go.GetComponent<Collider>().enabled = false;
+            go.GetComponent<MeshRenderer>().material.color = Color.red;
             //Debug.Log("Hit in something");
             Collider col = hit.collider;
             if (!col) yield return null;
