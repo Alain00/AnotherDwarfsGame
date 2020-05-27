@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 861110261858347749}
   - component: {fileID: 861110261858347748}
   m_Layer: 0
-  m_Name: Botequin
+  m_Name: EquipedNormalBotiquin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 861110263741015625}
   - component: {fileID: 861110263741015624}
   m_Layer: 0
-  m_Name: Torch
+  m_Name: EquipedTorch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1142,7 +1142,7 @@ GameObject:
   - component: {fileID: 6055945248049807690}
   - component: {fileID: 980395489429555792}
   m_Layer: 0
-  m_Name: Auto
+  m_Name: EquipedAuto
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1407,7 +1407,7 @@ GameObject:
   - component: {fileID: 6778174475890485454}
   - component: {fileID: 8026914415388482287}
   m_Layer: 0
-  m_Name: Granade
+  m_Name: EquipedNormalGranade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 8026914414773348381}
   - component: {fileID: 1310482762868775894}
   m_Layer: 0
-  m_Name: Pistol
+  m_Name: EquipedPistol
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2247,7 +2247,7 @@ GameObject:
   - component: {fileID: 8026914415757222591}
   - component: {fileID: 8026914415757222588}
   m_Layer: 0
-  m_Name: Shotgun
+  m_Name: EquipedShotgun
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2427,6 +2427,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8026914414967918904}
     m_Modifications:
+    - target: {fileID: 1875931698296233335, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: Rotation.y
+      value: -60
+      objectReference: {fileID: 0}
     - target: {fileID: 6132642413999085092, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2486,6 +2491,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415185137088, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: CamDist.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415185137088, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: CamDist.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415185137088, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: Rotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415271007728, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: Rotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415271007728, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: Rotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415548135601, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: Rotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415757222888, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: Rotation.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc61b012cad04f14b9a1b6fa7955f6c1, type: 3}
