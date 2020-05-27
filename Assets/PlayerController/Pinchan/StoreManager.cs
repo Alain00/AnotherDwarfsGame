@@ -26,7 +26,7 @@ public class StoreManager : MonoBehaviour
 
         ItemWindow = GameObject.Find("StoreCanvas");
         Animator   = ItemWindow.GetComponent<Animator>();
-        //inventory  = GameObject.FindObjectOfType<PlayerInventory>();
+        inventory  = GameObject.FindObjectOfType<PlayerInventory>();
         TextField  = GameObject.Find("TextField").GetComponent<Text>();
         PriceField = GameObject.Find("Price").GetComponent<Text>();
         ItemWindow.SetActive(false);
@@ -92,12 +92,13 @@ public class StoreManager : MonoBehaviour
     }
    
     public void OnBuyButton(){
-       int CurrentMoney = 5;
-       Debug.Log(inventory.Money);
-       /*if(CurrentMoney >= int.Parse(PriceField.text)){
+       int CurrentMoney = inventory.Money;
+       if(CurrentMoney >= int.Parse(PriceField.text)){
            CurrentMoney -= int.Parse(PriceField.text);
            GameObject Equiped = GameObject.Find("Equiped"+ Current.gameObject.name);
+           Debug.Log(Equiped.gameObject.name);
            if(!Current.Gun){
+               
                Equiped.GetComponent<Item>().Ammo ++;
                Equiped.GetComponent<Item>().Comprada = true;
            }
@@ -105,7 +106,8 @@ public class StoreManager : MonoBehaviour
                Equiped.GetComponent<Gun>().Ammo += Current.AmmoCant;
                Equiped.GetComponent<Gun>().Comprada = true;
            }
-       }*/
+       }
+       inventory.Money = CurrentMoney;
        
     }
 }
