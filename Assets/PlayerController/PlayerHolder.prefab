@@ -1,5 +1,162 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &88895081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88895082}
+  - component: {fileID: 88895083}
+  m_Layer: 0
+  m_Name: EquipedTinyGranade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &88895082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88895081}
+  m_LocalRotation: {x: -0.1663649, y: -0, z: -0, w: 0.98606426}
+  m_LocalPosition: {x: -0.342, y: 0.433, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_Children: []
+  m_Father: {fileID: 861110263288727825}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -19.153002, y: 0, z: 0}
+--- !u!114 &88895083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88895081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa0b343ace53034494084d212dba36b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Comprada: 1
+  Ammo: 10
+  Radius: 5
+  CanExplode: 0
+  ExplodeTime: 4
+  Explosion: {fileID: 2127329352166599869, guid: c541e8b1381ab1b45b50a7ae60b798bd,
+    type: 3}
+  ShakeDuration: 0.2
+  ShakeStrenght: 0.2
+  GranadeToInstantiate: {fileID: 4018885440605429404, guid: 9e40cb280e4531e4da305de5c3f196c4,
+    type: 3}
+  Player: {fileID: 3035391991829258786}
+--- !u!1 &2107960222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2107960223}
+  - component: {fileID: 2107960224}
+  m_Layer: 0
+  m_Name: EquipedBigGranade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2107960223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107960222}
+  m_LocalRotation: {x: -0.1663649, y: -0, z: -0, w: 0.98606426}
+  m_LocalPosition: {x: -0.342, y: 0.433, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_Children: []
+  m_Father: {fileID: 861110263288727825}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -19.153002, y: 0, z: 0}
+--- !u!114 &2107960224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107960222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa0b343ace53034494084d212dba36b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Comprada: 1
+  Ammo: 10
+  Radius: 5
+  CanExplode: 0
+  ExplodeTime: 4
+  Explosion: {fileID: 2127329352166599869, guid: c541e8b1381ab1b45b50a7ae60b798bd,
+    type: 3}
+  ShakeDuration: 0.5
+  ShakeStrenght: 0.6
+  GranadeToInstantiate: {fileID: 8990690890998900839, guid: db02694ba0e69d64996aa9430232985d,
+    type: 3}
+  Player: {fileID: 3035391991829258786}
+--- !u!1 &120394457028180581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1897264735897080838}
+  - component: {fileID: 8656606583430822049}
+  m_Layer: 0
+  m_Name: EquipedBigBotiquin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1897264735897080838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120394457028180581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 861110263288727825}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8656606583430822049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120394457028180581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3633c84eaea94499222f1dcd609159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Comprada: 1
+  Ammo: 4
+  LifeAmount: 14
+  Stats: {fileID: 0}
 --- !u!1 &332277959892656136
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Comprada: 1
   Ammo: 4
-  LifeAmount: 0
+  LifeAmount: 3
   Stats: {fileID: 0}
 --- !u!1 &861110263288727826
 GameObject:
@@ -176,12 +333,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861110263288727826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2700005, y: 1.9413319, z: 0}
+  m_LocalPosition: {x: 1.6, y: 3.91, z: 2.37}
   m_LocalScale: {x: 3.333333, y: 3.333333, z: 3.333333}
   m_Children:
   - {fileID: 6778174475890485454}
   - {fileID: 861110261858347749}
   - {fileID: 861110263741015625}
+  - {fileID: 2107960223}
+  - {fileID: 88895082}
+  - {fileID: 1897264735897080838}
   m_Father: {fileID: 3287329864643285077}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -893,7 +1053,7 @@ GameObject:
   - component: {fileID: 3287329864643285076}
   - component: {fileID: 3287329864643285082}
   - component: {fileID: 1310026124}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerHolder
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -933,6 +1093,7 @@ MonoBehaviour:
   movementSpeed: 11
   TimeMulti: 1
   Weapons: []
+  AmmoField: {fileID: 0}
   RightHand: []
 --- !u!54 &8026914415323541685
 Rigidbody:
@@ -1179,7 +1340,7 @@ MonoBehaviour:
   Bullet: {fileID: 4842412324334938415, guid: eb0034b18a44ea846ab98803126492b5, type: 3}
   ShotPoint: {fileID: 1761748391663876751}
   FireCadencia: 0.7
-  Ammo: 100
+  Ammo: 0
   Charger: 20
   ChargerLeft: 0
   BulletsPerShot: 3
@@ -1188,7 +1349,7 @@ MonoBehaviour:
   BulletRangeY: 0
   ShakeDuration: 0.3
   ShakeStrenght: 0.3
-  Comprada: 1
+  Comprada: 0
 --- !u!1 &4598724355176826160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5758167116681541133}
   m_LocalRotation: {x: -0.1663649, y: -0, z: -0, w: 0.98606426}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.342, y: 0.433, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 861110263288727825}
@@ -1441,14 +1602,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Comprada: 1
   Ammo: 10
-  RB: {fileID: 0}
   Radius: 5
   CanExplode: 0
   ExplodeTime: 4
   Explosion: {fileID: 2127329352166599869, guid: c541e8b1381ab1b45b50a7ae60b798bd,
     type: 3}
-  ShakeDuration: 0.3
-  ShakeStrenght: 0.3
+  ShakeDuration: 0.4
+  ShakeStrenght: 0.4
+  GranadeToInstantiate: {fileID: 3310106318963737421, guid: ed4fe9d8ce142bd4caf6740cc8378a5a,
+    type: 3}
+  Player: {fileID: 3035391991829258786}
 --- !u!1 &5782106261456152174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,7 +2165,7 @@ MonoBehaviour:
   Bullet: {fileID: 6904929991909333666, guid: c8cbb132826be19499eab216c6b69c90, type: 3}
   ShotPoint: {fileID: 8026914415221616014}
   FireCadencia: 0.7
-  Ammo: 100
+  Ammo: 10000
   Charger: 5
   ChargerLeft: 0
   BulletsPerShot: 1
@@ -2284,7 +2447,7 @@ MonoBehaviour:
   Bullet: {fileID: 6172916520269166408, guid: c9800dfbee04b4d4a9559c554b4c1902, type: 3}
   ShotPoint: {fileID: 8026914413944004421}
   FireCadencia: 1.5
-  Ammo: 100
+  Ammo: 0
   Charger: 100
   ChargerLeft: 0
   BulletsPerShot: 5
@@ -2293,7 +2456,7 @@ MonoBehaviour:
   BulletRangeY: 10
   ShakeDuration: 0.3
   ShakeStrenght: 1
-  Comprada: 1
+  Comprada: 0
 --- !u!1 &8253699874295063165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,6 +2595,11 @@ PrefabInstance:
       propertyPath: Rotation.y
       value: -60
       objectReference: {fileID: 0}
+    - target: {fileID: 6132642413937892065, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_Name
+      value: NormalGranade
+      objectReference: {fileID: 0}
     - target: {fileID: 6132642413999085092, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2492,6 +2660,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 6132642415004507310, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_Name
+      value: BigGranade
+      objectReference: {fileID: 0}
     - target: {fileID: 6132642415185137088, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
         type: 3}
       propertyPath: CamDist.x
@@ -2507,6 +2680,11 @@ PrefabInstance:
       propertyPath: Rotation.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6132642415185137088, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: Gun
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6132642415271007728, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
         type: 3}
       propertyPath: Rotation.x
@@ -2516,6 +2694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Rotation.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415271007728, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: Gun
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6132642415548135601, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
         type: 3}

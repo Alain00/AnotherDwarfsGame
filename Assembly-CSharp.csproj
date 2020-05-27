@@ -676,6 +676,9 @@
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/Work/projects/unity/Another Dwarf Game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+        <HintPath>C:/Users/Alejandro/Proyecto/AnotherDwarfsGame/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="NavMeshComponentsEditor.csproj">
