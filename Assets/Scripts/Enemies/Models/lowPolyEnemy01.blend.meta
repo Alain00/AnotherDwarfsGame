@@ -18,6 +18,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: enemy01
     second: {fileID: 2100000, guid: 1f43a2381b869fc45b1c1a9a4372cc11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: enemyFlin
+    second: {fileID: 2100000, guid: c970446ae7a416c47b03b29236c5177d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
