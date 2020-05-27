@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: idle
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dwarf
+    second: {fileID: 2100000, guid: 61d6d0d0b11784b429acd240f0d41a91, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
