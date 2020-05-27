@@ -9,33 +9,38 @@ public class Brother : MonoBehaviour
     bool Open;
     public GameObject Store;
     FollowPlayer CameraController;
-    public GameObject Player;
-    void Awake()
+    public PlayerController Player;
+    public GameObject CloseText;
+    public GameObject ExclamationSign;
+    void Start()
     {
+        Player = GameObject.FindObjectOfType<PlayerController>();
         transform.position =  SetPosInWorld.instance.SetPos(transform.position);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         CameraController = GameObject.FindObjectOfType<FollowPlayer>();
         Store.SetActive(false);
+        CloseText.SetActive(false);
+        ExclamationSign.SetActive(false);
     }
 
     
     void Update()
     {
-        if(player.position.sqrMagnitude < radius * radius){
-            if(Input.GetKeyDown(KeyCode.Space) && Open == false){
-                OpenStore();
-                Open = true;
-                
+        if(Vector3.Distance(transform.position , player.position )  < radius ){
+            if(Input.GetKeyDown(KeyCode.Space)){
+                Open = !Open;
+                OpenStore(Open); 
             }   
         }
     }
-    void OpenStore(){
+    void OpenStore( bool Open ){
+        if(Open)
         CameraController.Offset += Vector3.up * 15;
-        Store.SetActive(true);
-        /*GameObject store = Instantiate(Store , transform.position , Quaternion.identity , Camera.main.transform);
-        store.transform.localPosition = Vector3.zero;
-        store.transform.localEulerAngles = Vector3.zero;
-        store.transform.localPosition = transform.forward * 15;*/
-        Player.SetActive(false);
+        else  CameraController.Offset -= Vector3.up * 15;
+        Store.SetActive(Open);
+        CloseText.SetActive(Open);
+        ExclamationSign.SetActive(Open);
+        Player.enabled = !Open;
+       
     }
 }

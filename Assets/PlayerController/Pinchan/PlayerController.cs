@@ -43,7 +43,11 @@ public class PlayerController : MonoBehaviour
         Weapons.AddRange(GetComponentsInChildren<Gun>());
         CurrentGun = Weapons[0];
         anim.SetInteger("weapon" , 1);
-        
+        for(int i = 1 ; i < Weapons.Count ; i++){
+            Weapons[i].GetComponentInChildren<MeshRenderer>().enabled = false;
+        }
+
+
         RightHand.AddRange(GetComponentsInChildren<Item>());
         if(RightHand.Count > 0)
             CurrentItem = RightHand[0];
@@ -130,7 +134,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void ChangeWeapon(){
-        Weapons[indice].gameObject.SetActive(false);
+       Weapons[indice].GetComponentInChildren<MeshRenderer>().enabled = false;
             
         do{
             indice++;
@@ -141,7 +145,7 @@ public class PlayerController : MonoBehaviour
         }
         while(Weapons[indice].Comprada == false);    
         CurrentGun = Weapons[indice];            
-        Weapons[indice].gameObject.SetActive(true);
+        Weapons[indice].GetComponentInChildren<MeshRenderer>().enabled = true;
         anim.SetInteger("weapon", indice + 1);
     }
     public void AddWeapon(Gun ToAdd){

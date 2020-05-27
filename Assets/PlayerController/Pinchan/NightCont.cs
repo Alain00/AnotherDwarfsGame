@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NightCont : MonoBehaviour
 {
     public float NightDuration;
     public float NightMulti;
+    public Text NighField;
     void Start()
     {
         NightMulti = PlayerPrefs.GetFloat("LvlCont");
@@ -18,6 +20,9 @@ public class NightCont : MonoBehaviour
     void Update()
     {
         NightDuration -= Time.deltaTime;
+        int minutes = Mathf.RoundToInt(NightDuration / 60);
+        int seg = Mathf.RoundToInt(NightDuration - minutes * 60);
+        NighField.text =  minutes.ToString() + ":" + seg.ToString();
         if(NightDuration == 0){
             EndLVL();
         }
