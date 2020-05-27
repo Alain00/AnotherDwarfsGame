@@ -26,6 +26,7 @@ public class BulletHolder : MonoBehaviour
             if(col.gameObject.tag != "Player"){
                 float time = (hit.point - transform.position).magnitude / speed;
                 yield return new WaitForSeconds(time);
+                if (!col) yield return null;
                 if(col.gameObject.tag == "Enemy"){
                     col.gameObject.GetComponent<Destructible>().OnDamage(50);
                 }
