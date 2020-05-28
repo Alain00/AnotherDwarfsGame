@@ -55,6 +55,7 @@
      <Compile Include="Assets\PlayerController\Pinchan\FollowPlayer.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Granade.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Gun.cs" />
+     <Compile Include="Assets\PlayerController\Pinchan\HealthItem.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\InitGame.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Item.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\MenuScript.cs" />
@@ -71,6 +72,7 @@
      <Compile Include="Assets\Scripts\Enemies\EnemiesController.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemySpawer.cs" />
+     <Compile Include="Assets\Scripts\Enemies\ItemSpawOnDie.cs" />
      <Compile Include="Assets\Scripts\Enemies\ReadOnlyDrawer.cs" />
      <Compile Include="Assets\Scripts\Enemies\SimpleSpaw.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\CameraControls.cs" />
@@ -82,9 +84,11 @@
      <Compile Include="Assets\Scripts\IslandGenerator\DetailsSettings.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\Filter.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\IslandGenerator.cs" />
+     <Compile Include="Assets\Scripts\IslandGenerator\IslandLimitsGenerator.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\IslandMesh.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\Noise.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\NoiseSettings.cs" />
+     <Compile Include="Assets\Scripts\Items\MoneyItem.cs" />
      <Compile Include="Assets\Water\WaterMeshGenerator.cs" />
      <Compile Include="Assets\Water\waterNoise.cs" />
      <None Include="Assets\Scripts\IslandGenerator\Shader\TerrainTest.shader" />
