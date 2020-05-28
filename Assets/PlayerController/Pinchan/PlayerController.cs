@@ -27,11 +27,13 @@ public class PlayerController : MonoBehaviour
     float CoolDown;
     public List <Gun> Weapons = new List<Gun>();
     public Text AmmoField;
+    public Image WIconField;
 
     //ItemsStuff
     public List<Item> RightHand = new List<Item>();
     int itemIndice;
     Item CurrentItem;
+    public Image IIconField;
    
     void Start()
     {
@@ -51,11 +53,16 @@ public class PlayerController : MonoBehaviour
 
 
         RightHand.AddRange(GetComponentsInChildren<Item>());
-        if(RightHand.Count > 0)
+        if(RightHand.Count > 0){
             CurrentItem = RightHand[0];
+            IIconField.sprite = CurrentItem.sprite;
+        }    
         //Ponerlo en una posicion pegada al suelo
         SetPosInWorld Pos = SetPosInWorld.instance;
         transform.position =  Pos.SetPos(transform.position);
+
+        WIconField.sprite = CurrentGun.sprite;
+        
 
     }
 
@@ -155,6 +162,7 @@ public class PlayerController : MonoBehaviour
         CurrentGun = Weapons[indice];            
         Weapons[indice].GetComponentInChildren<MeshRenderer>().enabled = true;
         anim.SetInteger("weapon", indice + 1);
+        WIconField.sprite = CurrentGun.sprite;
     }
     public void AddWeapon(Gun ToAdd){
             Weapons.Add(ToAdd);
@@ -172,6 +180,7 @@ public class PlayerController : MonoBehaviour
         while(RightHand[itemIndice].Comprada == false);    
         CurrentItem = RightHand[itemIndice];            
         RightHand[itemIndice].gameObject.SetActive(true);
+        IIconField.sprite = CurrentItem.sprite;
     }
 
 

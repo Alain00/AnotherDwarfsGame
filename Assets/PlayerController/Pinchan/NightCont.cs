@@ -8,6 +8,11 @@ public class NightCont : MonoBehaviour
     public float NightDuration;
     public float NightMulti;
     public Text NighField;
+    ShipIsland Ship;
+    
+    void Awake(){
+        Ship = GameObject.FindObjectOfType<ShipIsland>();
+    }
     void Start()
     {
         NightMulti = PlayerPrefs.GetFloat("LvlCont");
@@ -19,6 +24,11 @@ public class NightCont : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.K))
+            Ship.gameObject.SetActive(true);
+        if(Input.GetKeyDown(KeyCode.L))
+            Ship.leave = true;    
+        
         NightDuration -= Time.deltaTime;
         int minutes = Mathf.RoundToInt(NightDuration / 60);
         int seg = Mathf.RoundToInt(NightDuration - minutes * 60);
