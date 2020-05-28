@@ -44,6 +44,7 @@
      <Compile Include="Assets\Pathfinding\Node.cs" />
      <Compile Include="Assets\Pathfinding\PathRequester.cs" />
      <Compile Include="Assets\Pathfinding\Pathfinding.cs" />
+     <Compile Include="Assets\PlayerController\MainMenu\PlayerInMenu.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Ammo.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Botiquin.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\BulletHolder.cs" />
@@ -90,6 +91,7 @@
      <Compile Include="Assets\Scripts\IslandGenerator\NoiseSettings.cs" />
      <Compile Include="Assets\Scripts\Items\MoneyItem.cs" />
      <Compile Include="Assets\ShipIsland.cs" />
+     <Compile Include="Assets\StoreCanvas.cs" />
      <Compile Include="Assets\Water\WaterMeshGenerator.cs" />
      <Compile Include="Assets\Water\waterNoise.cs" />
      <None Include="Assets\Scripts\IslandGenerator\Shader\TerrainTest.shader" />
