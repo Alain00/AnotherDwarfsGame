@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     int itemIndice;
     Item CurrentItem;
     public Image IIconField;
+    public LayerMask layerMask;
    
     void Start()
     {
@@ -133,10 +134,16 @@ public class PlayerController : MonoBehaviour
        Ray ray =  Camera.main.ScreenPointToRay(Input.mousePosition);
        RaycastHit hit;
        
-       if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000 ))
-            LookDir = Quaternion.LookRotation( (hit.point  ) - CurrentGun.ShotPoint.position);        
+       if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000, layerMask)){
+            Vector3 hitPos = hit.point;
+            hitPos.y += 2;
+            LookDir = Quaternion.LookRotation( (hitPos  ) - CurrentGun.ShotPoint.position);    
+       }    
         time = 1f;
-        Player.transform.rotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
+        Quaternion toRotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
+        toRotation.x = 0;
+        toRotation.z = 0;
+        Player.transform.rotation = toRotation;
     }
 
     void Shot(){

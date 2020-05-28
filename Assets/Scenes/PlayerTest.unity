@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 72095603}
   - component: {fileID: 72095602}
   - component: {fileID: 72095601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 188787720}
   - component: {fileID: 188787719}
   - component: {fileID: 188787718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 221654241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ramp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 687758028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 707738024}
   - component: {fileID: 707738023}
   - component: {fileID: 707738022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 1302311471}
   - component: {fileID: 1302311470}
   - component: {fileID: 1302311469}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,6 +770,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 980395489429555792, guid: 1ed41c6928417ea488ea3dae570dd91e,
+        type: 3}
+      propertyPath: Comprada
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287329864643285074, guid: 1ed41c6928417ea488ea3dae570dd91e,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 3287329864643285077, guid: 1ed41c6928417ea488ea3dae570dd91e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -829,6 +839,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185963106253580168, guid: 1ed41c6928417ea488ea3dae570dd91e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026914415757222588, guid: 1ed41c6928417ea488ea3dae570dd91e,
+        type: 3}
+      propertyPath: Comprada
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ed41c6928417ea488ea3dae570dd91e, type: 3}
@@ -936,7 +956,7 @@ GameObject:
   - component: {fileID: 2145113901}
   - component: {fileID: 2145113900}
   - component: {fileID: 2145113899}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
