@@ -51,7 +51,7 @@ public class Gun : MonoBehaviour
                     shaker.ShouldShake = true;
                     ChargerLeft--;   
                     LookDir = Quaternion.Euler(new Vector3(
-                                                0
+                                                LookDir.eulerAngles.x - 10
                                                 ,LookDir.eulerAngles.y + Random.Range(-BulletRangeY,BulletRangeY)
                                                 ,LookDir.z
                                                 ));

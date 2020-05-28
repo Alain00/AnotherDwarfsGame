@@ -25,6 +25,10 @@ public class CharacterMovement : MonoBehaviour
         mCollider = GetComponent<Collider>();
     }
 
+    public void SetSpeed(float speed){
+        agent.speed = speed;
+    }
+
     public void MoveTo(Vector3 newDestination){
         if (newDestination != Vector3.zero){
             targetSpeedPorcent = 1;

@@ -36,12 +36,12 @@ MonoBehaviour:
   - index: 3
     cooldown: 0.5
     animationOffset: 0.3
-    damage: 10
+    damage: 1
     distance: 3
   - index: 4
     cooldown: 0.5
     animationOffset: 0.11
-    damage: 10
+    damage: 1
     distance: 3
   attackOrigin: {fileID: 3407334498265887674}
   attackFilter:
@@ -85,6 +85,23 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!114 &9010315328882099031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4807526178123034867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf563069fbf1e140a96792e640a7959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 2290759881462293212, guid: 22a03a44bd7c3f3468b7cdd800091a4c, type: 3}
+  - {fileID: 4532884609306179485, guid: cc7b29e1185b33f45907f989b4b61b79, type: 3}
+  - {fileID: 6152851044942812284, guid: 892fb04ac0647464e8b72e8ce7ca03a1, type: 3}
+  noSpawProbabilities: 0.4
 --- !u!1 &8985410997942133211
 GameObject:
   m_ObjectHideFlags: 0

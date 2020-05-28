@@ -29,6 +29,7 @@ public class EnemyAI : Destructible
 
     void Start(){
         characterMovement = GetComponent<CharacterMovement>();
+        characterMovement.SetSpeed(Random.Range(minSpeed, maxSpeed));
         animator = characterMovement.animator;
         speed = Random.Range(minSpeed, maxSpeed);
     }
@@ -68,6 +69,13 @@ public class EnemyAI : Destructible
         RaycastHit hit;
         if (Physics.Raycast(attackOrigin.position, attackOrigin.forward, out hit,settings.distance, attackFilter)){
             //Hit the player
+            Collider col = hit.collider;
+            if (col){
+                PlayerStats stats = col.GetComponent<PlayerStats>();
+                if (stats){
+                    stats.ReciveDamage(settings.damage);
+                }
+            }
         }
         animator.SetInteger("attack", 0);
         Debug.Log("Success attack");
