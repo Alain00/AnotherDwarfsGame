@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject StartGame;
+    public GameObject Credits;
+    public GameObject Exit;
+
+    public GameObject RollCredits;
+    public GameObject BackButton;
+
     void Start()
     {
         
@@ -17,8 +24,23 @@ public class MenuScript : MonoBehaviour
         
     }
     public void OnStartButton(){
-        PlayerPrefs.SetFloat("NightMulti" , 1f);
-        PlayerPrefs.SetInt("Money" , 0);
         SceneManager.LoadScene(1);
+    }
+     public void OnCreditsButton(){
+        StartGame.SetActive(false);
+        Credits.SetActive(false);
+        Exit.SetActive(false);
+        RollCredits.SetActive(true);
+        BackButton.SetActive(true);
+    }
+     public void OnExitButton(){
+        Application.Quit();
+    }
+    public void OnBackButton(){
+         StartGame.SetActive(true);
+        Credits.SetActive(true);
+        Exit.SetActive(true);
+        RollCredits.SetActive(false);
+        BackButton.SetActive(false);
     }
 }

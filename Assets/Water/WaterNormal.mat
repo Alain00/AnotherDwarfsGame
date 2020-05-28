@@ -87,8 +87,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_ABC5809C: {r: 0.0074759745, g: 0.07552457, b: 0.2264151, a: 0}
-    - Color_F0127B81: {r: 0, g: 0.3230032, b: 0.5566038, a: 1}
+    - Color_ABC5809C: {r: 0.2971698, g: 0.51052916, b: 1, a: 0}
+    - Color_F0127B81: {r: 0.07342472, g: 0.19445798, b: 0.2830189, a: 1}
     - _BaseColor: {r: 0, g: 0.42371368, b: 1, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
