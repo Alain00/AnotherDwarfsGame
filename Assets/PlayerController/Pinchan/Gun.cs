@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
+    public Sprite sprite;
      public GameObject Flash;
      public GameObject Bullet;
      public Transform ShotPoint;

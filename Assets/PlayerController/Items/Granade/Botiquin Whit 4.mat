@@ -85,7 +85,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_C51DEAFD: {r: 0.027028197, g: 0.36037597, b: 0, a: 0}
-    - Color_F50AA101: {r: 0.65205944, g: 0.40967086, b: 0, a: 0}
+    - Color_F50AA101: {r: 0.8396226, g: 0.53638315, b: 0.027723404, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

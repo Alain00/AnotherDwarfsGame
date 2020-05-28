@@ -85,6 +85,7 @@
      <Compile Include="Assets\Scripts\IslandGenerator\IslandMesh.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\Noise.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\NoiseSettings.cs" />
+     <Compile Include="Assets\ShipIsland.cs" />
      <Compile Include="Assets\Water\WaterMeshGenerator.cs" />
      <Compile Include="Assets\Water\waterNoise.cs" />
      <None Include="Assets\Scripts\IslandGenerator\Shader\TerrainTest.shader" />

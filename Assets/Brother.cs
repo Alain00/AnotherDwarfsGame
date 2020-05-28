@@ -15,12 +15,13 @@ public class Brother : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindObjectOfType<PlayerController>();
-        transform.position =  SetPosInWorld.instance.SetPos(transform.position);
+        //transform.position =  SetPosInWorld.instance.SetPos(transform.position);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         CameraController = GameObject.FindObjectOfType<FollowPlayer>();
         Store.SetActive(false);
         CloseText.SetActive(false);
         ExclamationSign.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     

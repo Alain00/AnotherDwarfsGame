@@ -299,7 +299,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 833db690b4223ff41ba0b70a8ab9cdc9, type: 2}
+  - {fileID: 2100000, guid: 2d4205b4c3cdab64187cbad747780cdc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -346,14 +346,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3310106318963737421}
-  m_LocalRotation: {x: 0.5, y: -0, z: -0, w: 0.8660254}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
   m_LocalPosition: {x: -39.02, y: 34.55, z: 16.61}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3310106318025249887}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60.000004, y: 0, z: 0}
 --- !u!114 &3310106318963737416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,14 +368,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Comprada: 1
   Ammo: 0
+  sprite: {fileID: 0}
   Radius: 8
   CanExplode: 0
   ExplodeTime: 4
-  Explosion: {fileID: 2127329352166599869, guid: c541e8b1381ab1b45b50a7ae60b798bd,
+  Explosion: {fileID: 2127329352166599869, guid: 8b2d59c51337262448064bd87a144f98,
     type: 3}
   ShakeDuration: 0.4
   ShakeStrenght: 0.4
   GranadeToInstantiate: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!54 &3310106318963737423
 Rigidbody:
   m_ObjectHideFlags: 0

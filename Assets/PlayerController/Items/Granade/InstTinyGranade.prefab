@@ -289,10 +289,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Comprada: 1
   Ammo: 0
+  sprite: {fileID: 0}
   Radius: 4
   CanExplode: 0
   ExplodeTime: 4
-  Explosion: {fileID: 2127329352166599869, guid: c541e8b1381ab1b45b50a7ae60b798bd,
+  Explosion: {fileID: 2127329352166599869, guid: c20f56480234ab7448060e3f0f4d88cb,
     type: 3}
   ShakeDuration: 0.3
   ShakeStrenght: 0.2
