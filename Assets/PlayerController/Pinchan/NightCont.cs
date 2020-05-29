@@ -9,12 +9,14 @@ public class NightCont : MonoBehaviour
     public float NightMulti;
     public Text NighField;
     ShipIsland Ship;
+    EnemiesController enemiesController;
     
     void Awake(){
         Ship = GameObject.FindObjectOfType<ShipIsland>();
     }
     void Start()
     {
+        enemiesController = EnemiesController.main;
         NightMulti = PlayerPrefs.GetFloat("LvlCont");
         PlayerPrefs.SetFloat("LvlCont", NightMulti + .3f );
         NightDuration *= NightMulti + .3f; 
