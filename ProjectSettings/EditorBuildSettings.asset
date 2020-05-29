@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Water/Menu.unity
+    path: Assets/PlayerController/Water/Menu.unity
     guid: e54f09f39c2bec645bacc54d0e6fe8a2
   - enabled: 0
-    path: Assets/Water/TerrainTest 1.unity
+    path: Assets/PlayerController/Water/TerrainTest 1.unity
     guid: df887ff1337c3f649b8853721e3a330f
   m_configObjects: {}

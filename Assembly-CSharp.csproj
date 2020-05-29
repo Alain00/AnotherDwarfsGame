@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\MirillaController.cs" />
      <Compile Include="Assets\Pathfinding\AgentPathFinding.cs" />
      <Compile Include="Assets\Pathfinding\BinaryTree.cs" />
      <Compile Include="Assets\Pathfinding\Grid.cs" />
@@ -70,6 +71,8 @@
      <Compile Include="Assets\PlayerController\Pinchan\StoreCanvas.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\StoreManager.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Torch.cs" />
+     <Compile Include="Assets\PlayerController\Water\WaterMeshGenerator.cs" />
+     <Compile Include="Assets\PlayerController\Water\waterNoise.cs" />
      <Compile Include="Assets\Scripts\Enemies\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Enemies\Destructible.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemiesController.cs" />
@@ -92,8 +95,6 @@
      <Compile Include="Assets\Scripts\IslandGenerator\Noise.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\NoiseSettings.cs" />
      <Compile Include="Assets\Scripts\Items\MoneyItem.cs" />
-     <Compile Include="Assets\Water\WaterMeshGenerator.cs" />
-     <Compile Include="Assets\Water\waterNoise.cs" />
      <None Include="Assets\Scripts\IslandGenerator\Shader\TerrainTest.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class ShipAtHighSpeed : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Animator animator;
+    public bool MustGo;
     void Start()
     {
         StartCoroutine(Shake());
+        animator = GetComponent<Animator>();
+        animator.SetBool("EnterTrans",true);
     }
 
-    // Update is called once per frame
-    void Update()
+       void Update()
     {
-       
+       if(MustGo)
+            animator.SetBool("EnterTrans",false);
     }
 
     IEnumerator Shake(){
