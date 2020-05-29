@@ -9,8 +9,11 @@ public class ShipIsland : MonoBehaviour
     public bool leave;
     Vector3 velocity;
     public float SmoothSpeed;
-    public GameObject Brother;
+    public Brother bro;
     bool Once;
+    void Awake(){
+         bro = GameObject.FindObjectOfType<Brother>();
+    }
     void Start()
     {
         Destiny = SetPosInWorld.instance.SetPos(transform.position);
@@ -24,7 +27,7 @@ public class ShipIsland : MonoBehaviour
     {
         if(leave){
             transform.position = Vector3.SmoothDamp(transform.position , StartPos + transform.right * 20 , ref velocity , SmoothSpeed );
-            Brother.SetActive(false);
+            bro.gameObject.SetActive(false);
             Invoke("Restart", SmoothSpeed * 3f);
         }
         else{   
@@ -40,8 +43,8 @@ public class ShipIsland : MonoBehaviour
         
     }
     public void Arrive(){
-        Brother.transform.position = transform.position + transform.up * 5 + transform.right * 5;
-        Brother.SetActive(true);
-        Brother.transform.position = SetPosInWorld.instance.SetPos(Brother.transform.position);
+        bro.transform.position = transform.position + transform.up * 5 + transform.right * 5;
+        bro.gameObject.SetActive(true);
+        bro.transform.position = SetPosInWorld.instance.SetPos(bro.transform.position);
     }
 }

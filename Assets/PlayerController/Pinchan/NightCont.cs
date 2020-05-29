@@ -13,6 +13,7 @@ public class NightCont : MonoBehaviour
     
     void Awake(){
         Ship = GameObject.FindObjectOfType<ShipIsland>();
+        NighField = GameObject.Find("NighDur").GetComponent<Text>();
     }
     void Start()
     {
