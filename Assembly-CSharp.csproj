@@ -94,6 +94,7 @@
      <Compile Include="Assets\Scripts\IslandGenerator\IslandMesh.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\Noise.cs" />
      <Compile Include="Assets\Scripts\IslandGenerator\NoiseSettings.cs" />
+     <Compile Include="Assets\Scripts\Items\AmmoItem.cs" />
      <Compile Include="Assets\Scripts\Items\MoneyItem.cs" />
      <None Include="Assets\Scripts\IslandGenerator\Shader\TerrainTest.shader" />
     <Reference Include="UnityEngine">
