@@ -22,6 +22,7 @@ public class Gun : MonoBehaviour
     public float ShakeDuration;
     public float ShakeStrenght;
     public bool Comprada;
+    public GameObject ammoItem;
     
 
     public void Start(){
