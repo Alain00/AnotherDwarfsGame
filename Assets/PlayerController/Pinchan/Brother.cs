@@ -14,8 +14,9 @@ public class Brother : MonoBehaviour
     public GameObject ExclamationSign;
     void Start()
     {
+        Store = GameObject.Find("Shop");
+        CloseText = GameObject.Find("CloseText");
         Player = GameObject.FindObjectOfType<PlayerController>();
-        //transform.position =  SetPosInWorld.instance.SetPos(transform.position);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         CameraController = GameObject.FindObjectOfType<FollowPlayer>();
         Store.SetActive(false);

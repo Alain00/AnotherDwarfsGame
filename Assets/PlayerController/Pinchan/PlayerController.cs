@@ -38,12 +38,17 @@ public class PlayerController : MonoBehaviour
    
     void Start()
     {
+        Player = GameObject.Find("lowPolyDwarf");
+        AmmoField = GameObject.Find("AmmoText").GetComponent<Text>();
         anim = GetComponentInChildren<Animator>();
         speed =  anim.GetFloat("speed");
+        WIconField = GameObject.Find("WeaponSlot").GetComponent<Image>();
+        IIconField = GameObject.Find("ItemSlot").GetComponent<Image>();
         CoolDown = 0;
         rB = GetComponent<Rigidbody>();
         LookDir = new Quaternion();
         time = 1;
+        
         //Coger todas las armas
         Weapons.AddRange(GetComponentsInChildren<Gun>());
         CurrentGun = Weapons[0];

@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
     public Text MoneyField;
     void Start()
     {
+        MoneyField = GameObject.Find("MoneyText").GetComponent<Text>();
     }
     void Update()
     {
