@@ -9655,7 +9655,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4842412324334938414}
   - component: {fileID: 2712872456874643144}
-  - component: {fileID: 9208168530015630443}
   m_Layer: 0
   m_Name: Projectile_VFX
   m_TagString: Untagged
@@ -9699,16 +9698,3 @@ MonoBehaviour:
     m_Bits: 1847
   ImpactVFX: {fileID: 7456153741153647893, guid: a0cdf586f836c544ca0b73c88f1a8b46,
     type: 3}
---- !u!65 &9208168530015630443
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4842412324334938415}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
