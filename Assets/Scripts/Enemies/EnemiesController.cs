@@ -28,6 +28,13 @@ public class EnemiesController : MonoBehaviour
     bool resting = false;
     Transform playerTransform;
 
+    public delegate void OnWaveCompletedEvent();
+    public event OnWaveCompletedEvent OnWaveCompleted;
+    public delegate void OnWaveBeginsEvent();
+    public event OnWaveCompletedEvent OnWaveBegins;
+    public delegate void OnLastWaveCompletedEvent();
+    public event OnLastWaveCompletedEvent OnLastWaveCompleted;
+
     void Awake(){
         main = this;
     }
@@ -50,15 +57,23 @@ public class EnemiesController : MonoBehaviour
         resting = true;
         timeToNextWave = Time.time + restTime;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+        OnWaveCompleted += HandleWaveCompleted;
+        OnWaveBegins += HandleWaveBegins;
     }
 
     void Update(){
         if (Time.time > timeToNextWave){
             if (enemiesAlive > 0) return;
             if (!resting){
+                if (waveProgress == wavesCount){
+                    OnLastWaveCompleted();
+                }else
+                    OnWaveCompleted();
                 resting = true;
                 timeToNextWave = Time.time + restTime;
             }else{
+                OnWaveBegins();
                 NextWave();
                 resting = false;
             }
@@ -102,6 +117,10 @@ public class EnemiesController : MonoBehaviour
     void HandleEnemyDied(){
         enemiesAlive--;
     }
+
+    void HandleWaveCompleted(){}
+
+    void HandleWaveBegins(){}
 
     void OnGUI(){
         if (!debug) return;

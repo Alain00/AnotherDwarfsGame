@@ -12,6 +12,7 @@ public class Granade : Item
   public GameObject Explosion;
   public float ShakeDuration;
   public float ShakeStrenght;
+  public float damage = 20;
   public GameObject GranadeToInstantiate;
   public Transform Player;
   void Start(){
@@ -58,9 +59,9 @@ public class Granade : Item
       Collider[] Enemies;
       Enemies =  Physics.OverlapSphere(transform.position , Radius );  
       for(int i = 0 ; i < Enemies.Length ; i++){
-          Enemy CurEnemy =  Enemies[i].GetComponent<Enemy>();
-          if(CurEnemy != null){
-              CurEnemy.Health -= 3;
+          Destructible destructible =  Enemies[i].GetComponent<Destructible>();
+          if(destructible != null){
+              destructible.OnDamage(damage);
           }
       }
       //Destroy trash
