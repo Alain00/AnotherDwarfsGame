@@ -45,10 +45,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Comprada: 1
   Ammo: 10
+  sprite: {fileID: 21300000, guid: 82053976eb50b4a479d79060fc95a213, type: 3}
   Radius: 5
   CanExplode: 0
   ExplodeTime: 4
-  Explosion: {fileID: 2127329352166599869, guid: c541e8b1381ab1b45b50a7ae60b798bd,
+  Explosion: {fileID: 2127329352166599869, guid: c20f56480234ab7448060e3f0f4d88cb,
     type: 3}
   ShakeDuration: 0.2
   ShakeStrenght: 0.2
@@ -100,10 +101,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Comprada: 1
   Ammo: 10
+  sprite: {fileID: 21300000, guid: 8d5c6eb3e6201c342a4d045f01f21c37, type: 3}
   Radius: 5
   CanExplode: 0
   ExplodeTime: 4
-  Explosion: {fileID: 2127329352166599869, guid: c541e8b1381ab1b45b50a7ae60b798bd,
+  Explosion: {fileID: 2127329352166599869, guid: 07710decb85aba24eac5c04dbfab1307,
     type: 3}
   ShakeDuration: 0.5
   ShakeStrenght: 0.6
@@ -155,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Comprada: 1
   Ammo: 4
+  sprite: {fileID: 21300000, guid: 6a499998a272ef741bf8dcaddcab5bdc, type: 3}
   LifeAmount: 14
   Stats: {fileID: 0}
 --- !u!1 &332277959892656136
@@ -307,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Comprada: 1
   Ammo: 4
+  sprite: {fileID: 21300000, guid: 603be64fc56817f47ba53f85d6a68e6f, type: 3}
   LifeAmount: 3
   Stats: {fileID: 0}
 --- !u!1 &861110263288727826
@@ -390,6 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Comprada: 1
   Ammo: 5
+  sprite: {fileID: 21300000, guid: 72bfa528dfd734548b5bb98642dcc233, type: 3}
   AntorchaDura: {fileID: 2381321705404974874, guid: 0936538f0cbf20f41b2384ad399acb1e,
     type: 3}
 --- !u!1 &1176061979368785342
@@ -1094,7 +1099,12 @@ MonoBehaviour:
   TimeMulti: 1
   Weapons: []
   AmmoField: {fileID: 0}
+  WIconField: {fileID: 0}
   RightHand: []
+  IIconField: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!54 &8026914415323541685
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1336,6 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bda79d58e610b48a4aa63900130878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 6c0e427dd49c6c647acad10abf7f4619, type: 3}
   Flash: {fileID: 350833665374716553, guid: d8ab414f9c0ed7c49a5803747d56bb8a, type: 3}
   Bullet: {fileID: 4842412324334938415, guid: eb0034b18a44ea846ab98803126492b5, type: 3}
   ShotPoint: {fileID: 1761748391663876751}
@@ -1350,6 +1361,8 @@ MonoBehaviour:
   ShakeDuration: 0.3
   ShakeStrenght: 0.3
   Comprada: 0
+  ammoItem: {fileID: 4532884609306179485, guid: cc7b29e1185b33f45907f989b4b61b79,
+    type: 3}
 --- !u!1 &4598724355176826160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,10 +1615,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Comprada: 1
   Ammo: 10
+  sprite: {fileID: 21300000, guid: 9be4911f2bac2c04c86477a7af3fcd37, type: 3}
   Radius: 5
   CanExplode: 0
   ExplodeTime: 4
-  Explosion: {fileID: 2127329352166599869, guid: c541e8b1381ab1b45b50a7ae60b798bd,
+  Explosion: {fileID: 2127329352166599869, guid: 8b2d59c51337262448064bd87a144f98,
     type: 3}
   ShakeDuration: 0.4
   ShakeStrenght: 0.4
@@ -2161,6 +2175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bda79d58e610b48a4aa63900130878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 205595c5f79f36f4fbd8f27e96ebf298, type: 3}
   Flash: {fileID: 883607706911560576, guid: 73c2e07dd52014b48aaa489d06c8852c, type: 3}
   Bullet: {fileID: 6904929991909333666, guid: c8cbb132826be19499eab216c6b69c90, type: 3}
   ShotPoint: {fileID: 8026914415221616014}
@@ -2175,6 +2190,8 @@ MonoBehaviour:
   ShakeDuration: 0.3
   ShakeStrenght: 0.2
   Comprada: 1
+  ammoItem: {fileID: 4607167900837634530, guid: 1ff67634da980a340aebb25de6151ef6,
+    type: 3}
 --- !u!1 &8026914414967918853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,6 +2460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bda79d58e610b48a4aa63900130878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 6fbadce776e250f4ba2018d84af92a1d, type: 3}
   Flash: {fileID: 3961424789920326848, guid: f4147d0a006368f44b3d613638bba40d, type: 3}
   Bullet: {fileID: 6172916520269166408, guid: c9800dfbee04b4d4a9559c554b4c1902, type: 3}
   ShotPoint: {fileID: 8026914413944004421}
@@ -2457,6 +2475,8 @@ MonoBehaviour:
   ShakeDuration: 0.3
   ShakeStrenght: 1
   Comprada: 0
+  ammoItem: {fileID: 4532884609306179485, guid: cc7b29e1185b33f45907f989b4b61b79,
+    type: 3}
 --- !u!1 &8253699874295063165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,11 +2610,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8026914414967918904}
     m_Modifications:
+    - target: {fileID: 1236879315799103540, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236879315799103540, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875931698296233334, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875931698296233334, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875931698296233334, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875931698296233334, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 1875931698296233335, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
         type: 3}
       propertyPath: Rotation.y
       value: -60
       objectReference: {fileID: 0}
+    - target: {fileID: 4420308877745660100, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff64a4bb068a90447a72d7fb495a8e1c, type: 2}
     - target: {fileID: 6132642413937892065, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
         type: 3}
       propertyPath: m_Name
@@ -2659,6 +2714,67 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642413999085099, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: Descripcion.Array.data[0]
+      value: "Escopeta m\xE1s com\xFAn del mercado que desprende 5 proyectiles por
+        disparo , un arma perfecta para destrozar a quien reciba un disparo de ella "
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642414587137014, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d4205b4c3cdab64187cbad747780cdc, type: 2}
+    - target: {fileID: 6132642415004507309, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.018179268
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415004507309, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6879857
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415004507309, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.010273039
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415004507309, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.72542375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415004507309, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415004507309, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415004507309, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415004507309, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.70100003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415004507309, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 86.979004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132642415004507309, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -2.288
       objectReference: {fileID: 0}
     - target: {fileID: 6132642415004507310, guid: dc61b012cad04f14b9a1b6fa7955f6c1,
         type: 3}
