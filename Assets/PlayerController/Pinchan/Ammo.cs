@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
-    Gun WeaponToBelong;
+    PlayerController WeaponToBelong;
     public string WeaponName;
     public int AmmoCant;
+    public int Index;
     void Start()
     {
-        WeaponToBelong = GameObject.Find(WeaponName).GetComponent<Gun>();
+        WeaponToBelong =GameObject.FindObjectOfType<PlayerController>();
     }
 
     void Update()
@@ -18,7 +19,7 @@ public class Ammo : MonoBehaviour
     }
     void OnCollisionEnter(Collision col){
         if(col.gameObject.tag == "Player"){
-            WeaponToBelong.Ammo += AmmoCant;
+            WeaponToBelong.Weapons[Index].Ammo += AmmoCant;
             Destroy(gameObject);
         }
     }

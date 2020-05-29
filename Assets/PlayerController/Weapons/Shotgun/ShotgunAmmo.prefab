@@ -62,6 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponName: Shotgun
   AmmoCant: 20
+  Index: 1
 --- !u!54 &4985233907891114801
 Rigidbody:
   m_ObjectHideFlags: 0
