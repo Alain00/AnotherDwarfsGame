@@ -26,6 +26,7 @@ public class EnemySpawer : MonoBehaviour
     }
 
     IEnumerator ExecuteSpaw(){
+        if (EnemiesController.main.resting) yield return null;
         yield return new WaitForSeconds(nexSpaw);
         int prefabIndex = Random.Range(0, enemiesPrefabs.Length);
         EnemyAI newEnemy = Instantiate(enemiesPrefabs[prefabIndex], transform.position, Quaternion.identity);
