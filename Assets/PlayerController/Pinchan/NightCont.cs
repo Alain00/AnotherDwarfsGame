@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NightCont : MonoBehaviour
 {
@@ -21,17 +22,14 @@ public class NightCont : MonoBehaviour
         NightMulti = PlayerPrefs.GetFloat("LvlCont");
         PlayerPrefs.SetFloat("LvlCont", NightMulti + .3f );
         NightDuration *= NightMulti + .3f; 
-        
+        enemiesController.OnWaveBegins += OnWaveBegins;
+        enemiesController.OnWaveCompleted += OnWaveEnd;
+        enemiesController.OnLastWaveCompleted += EndLVL;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.K))
-            Ship.gameObject.SetActive(true);
-        if(Input.GetKeyDown(KeyCode.L))
-            Ship.leave = true;    
-        
+    {   
         NightDuration -= Time.deltaTime;
         int minutes = Mathf.RoundToInt(NightDuration / 60);
         int seg = Mathf.RoundToInt(NightDuration - minutes * 60);
@@ -40,9 +38,19 @@ public class NightCont : MonoBehaviour
             EndLVL();
         }
     }
+
+    void OnWaveEnd(){
+        Ship.ComeBack();
+    }
+
+    void OnWaveBegins(){
+        Ship.Leave();
+    }
+
     void EndLVL(){
         Debug.Log("MissionDONE");
         //Cargar otra scene
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
 
     }
 }

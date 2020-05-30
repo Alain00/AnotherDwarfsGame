@@ -35,7 +35,10 @@ public class PlayerController : MonoBehaviour
     Item CurrentItem;
     public Image IIconField;
     public LayerMask layerMask;
-   
+    
+    [HideInInspector]
+    public Vector3 lastSeenPoint;
+
     void Start()
     {
         Player = GameObject.Find("lowPolyDwarf");
@@ -100,6 +103,14 @@ public class PlayerController : MonoBehaviour
         else speed -= Time.deltaTime * 2 * TimeMulti;
 
        
+        RaycastHit hit;
+
+        Ray ray =  Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000, layerMask)){
+            Vector3 hitPos = hit.point;
+            hitPos.y += 2;
+            lastSeenPoint = hitPos;
+        }
         
         CoolDown -= Time.deltaTime;
         if(Input.GetButton("Fire1") ){
@@ -111,6 +122,7 @@ public class PlayerController : MonoBehaviour
             OnClickLookDir();
             ItemAction();
         }  
+
 
         LookDir.x = 0;
         LookDir.z = 0;
@@ -136,14 +148,10 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnClickLookDir(){
-       Ray ray =  Camera.main.ScreenPointToRay(Input.mousePosition);
-       RaycastHit hit;
        
-       if(Physics.Raycast(ray.origin , ray.direction , out hit , 1000, layerMask)){
-            Vector3 hitPos = hit.point;
-            hitPos.y += 2;
-            LookDir = Quaternion.LookRotation( (hitPos  ) - CurrentGun.ShotPoint.position);    
-       }    
+       
+        LookDir = Quaternion.LookRotation( (lastSeenPoint  ) - CurrentGun.ShotPoint.position);    
+       
         time = 1f;
         Quaternion toRotation = Quaternion.Lerp( Player.transform.rotation,LookDir , 7 * Time.deltaTime );
         toRotation.x = 0;

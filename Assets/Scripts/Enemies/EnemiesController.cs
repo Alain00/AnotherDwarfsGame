@@ -25,7 +25,8 @@ public class EnemiesController : MonoBehaviour
     int enemiesSpawed = 0;
     int enemiesAlive = 0;
     float timeToNextWave = 0;
-    bool resting = false;
+    [HideInInspector]
+    public bool resting = false;
     Transform playerTransform;
 
     public delegate void OnWaveCompletedEvent();
