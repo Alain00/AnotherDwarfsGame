@@ -21,6 +21,9 @@ public class StoreManager : MonoBehaviour
     public Text TextField;
     public Text PriceField;
     public Animator Animator;
+    public AudioClip HoverSFX;
+    public AudioClip OnClickSFX;
+    public AudioSource audioSource;
     
     void Awake(){
 
@@ -60,6 +63,8 @@ public class StoreManager : MonoBehaviour
                         Current.Focus = true;
                         IsFocusing = true;
                         Current.hover = false;
+                        audioSource.clip = OnClickSFX;
+                        audioSource.Play();
                 }    
             float RotationY = Input.GetAxis("Mouse Y") * RotSpeed * Mathf.Deg2Rad;
             LastItem.GetComponentInChildren<MeshRenderer>().transform.Rotate(Vector3.up , RotationY);
@@ -80,12 +85,17 @@ public class StoreManager : MonoBehaviour
                     if(!Current.Focus)
                         Current.hover = true;
                     LastItem = hit.transform;
+                    if(audioSource.clip != HoverSFX){
+                        audioSource.clip = HoverSFX;
+                        audioSource.Play();
+                    }    
                 }
             
             }else {
                     LastItem = null;
                     if(Current != null)
                         Current.hover = false; 
+                    audioSource.clip = null;
             }
         }
       

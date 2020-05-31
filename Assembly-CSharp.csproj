@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\EnemySFX.cs" />
      <Compile Include="Assets\MirillaController.cs" />
      <Compile Include="Assets\Pathfinding\AgentPathFinding.cs" />
      <Compile Include="Assets\Pathfinding\BinaryTree.cs" />
@@ -74,6 +75,8 @@
      <Compile Include="Assets\PlayerController\Water\TransitionSceneScript.cs" />
      <Compile Include="Assets\PlayerController\Water\WaterMeshGenerator.cs" />
      <Compile Include="Assets\PlayerController\Water\waterNoise.cs" />
+     <Compile Include="Assets\RandomAudioSelector.cs" />
+     <Compile Include="Assets\RandomSong.cs" />
      <Compile Include="Assets\Scripts\Enemies\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Enemies\Destructible.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemiesController.cs" />
