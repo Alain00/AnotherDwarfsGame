@@ -25,6 +25,7 @@ public class EnemyAI : Destructible
     float speed;
     float nexAttack = 0;
     bool hasDied = false;
+    bool IsUnderFire = false;
     Animator animator;
 
     void Start(){
@@ -36,6 +37,7 @@ public class EnemyAI : Destructible
 
     void Update(){
         if (hasDied) return;
+        if(IsUnderFire)
         FollowTarget();
     }
 

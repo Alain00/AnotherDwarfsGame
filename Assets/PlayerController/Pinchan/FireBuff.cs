@@ -18,8 +18,8 @@ public class FireBuff : MonoBehaviour
        colliders = Physics.OverlapSphere(transform.position , radius , mask);
        if(colliders.Length > 0){
            for(int i = 0 ; i < colliders.Length ; i++){
-               AgentPathFinding enemy = colliders[i].GetComponent<AgentPathFinding>();
-               enemy.IsUnderFire = true;
+               EnemyAI enemy = colliders[i].GetComponent<EnemyAI>();
+               //enemy.IsUnderFire = true;
            }
            
        }

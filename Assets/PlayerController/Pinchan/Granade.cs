@@ -40,7 +40,7 @@ public class Granade : Item
       GameObject Current =  Instantiate(GranadeToInstantiate , transform.position + Player.forward , Dir );
       RB = Current.GetComponent<Rigidbody>();
       Granade CurrentGranade =  Current.GetComponent<Granade>();
-      RB.AddForce(Current.transform.forward * 10 + Current.transform.up * 3 , ForceMode.Impulse);
+      RB.AddForce(Current.transform.forward * 6 + Current.transform.up * 3 , ForceMode.Impulse);
       CurrentGranade.CanExplode = true;
   }
 

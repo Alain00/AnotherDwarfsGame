@@ -53,6 +53,8 @@ MonoBehaviour:
     m_Bits: 1847
   ImpactVFX: {fileID: 8864044355771098598, guid: d855bb2562c8cc746854fe0776f80e19,
     type: 3}
+  EnemyImpactVFX: {fileID: 606783935798310059, guid: 47d3f85f5f5023f4590f8e0ce3cb5f43,
+    type: 3}
 --- !u!1 &6172916521244173035
 GameObject:
   m_ObjectHideFlags: 0

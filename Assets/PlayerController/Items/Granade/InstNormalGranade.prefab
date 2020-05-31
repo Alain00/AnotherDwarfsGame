@@ -369,13 +369,14 @@ MonoBehaviour:
   Comprada: 1
   Ammo: 0
   sprite: {fileID: 0}
-  Radius: 8
+  Radius: 16
   CanExplode: 0
-  ExplodeTime: 4
+  ExplodeTime: 2
   Explosion: {fileID: 2127329352166599869, guid: 8b2d59c51337262448064bd87a144f98,
     type: 3}
   ShakeDuration: 0.4
   ShakeStrenght: 0.4
+  damage: 40
   GranadeToInstantiate: {fileID: 0}
   Player: {fileID: 0}
 --- !u!54 &3310106318963737423
