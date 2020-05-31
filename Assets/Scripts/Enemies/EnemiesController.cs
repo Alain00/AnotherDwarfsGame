@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemiesController : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class EnemiesController : MonoBehaviour
     [HideInInspector]
     public bool resting = false;
     Transform playerTransform;
+    int levelCount = 1;
+    float enemiesHealthIncreased = 0;
 
     public delegate void OnWaveCompletedEvent();
     public event OnWaveCompletedEvent OnWaveCompleted;
@@ -37,7 +40,13 @@ public class EnemiesController : MonoBehaviour
     public event OnLastWaveCompletedEvent OnLastWaveCompleted;
 
     void Awake(){
-        main = this;
+        if (main == null){
+            main = this;
+            DontDestroyOnLoad(gameObject);
+        }else if (main == this) return;
+        else{
+            Destroy(gameObject);
+        }
     }
 
     void OnValidate(){
@@ -55,26 +64,51 @@ public class EnemiesController : MonoBehaviour
     }
 
     void Start(){
+       
+        
+        SceneManager.sceneLoaded += NewLevelLoaded;
+        Initialize();
+        
+        
+    }
+
+    void Initialize(){
         resting = true;
         timeToNextWave = Time.time + restTime;
+        waveProgress = 0;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        levelCount = PlayerPrefs.GetInt("LevelsCompleted", 0);
+        enemiesHealthIncreased += Random.Range(increaseEnemiesHealthRange.x, increaseEnemiesHealthRange.y);
 
         OnWaveCompleted += HandleWaveCompleted;
         OnWaveBegins += HandleWaveBegins;
+        OnLastWaveCompleted = HandleLastWaveCompleted;
+        Debug.Log("Enemies Controller initialized");
+    }
+
+    void Clear(){
+         waveProgress = 0;
+        enemiesAlive = 0;
+        enemiesSpawed = 0;
+
+        OnWaveBegins = null;
+        OnWaveCompleted = null;
+        spawers = new List<EnemySpawer>();
     }
 
     void Update(){
         if (Time.time > timeToNextWave){
             if (enemiesAlive > 0) return;
             if (!resting){
-                if (waveProgress == wavesCount){
+                if (waveProgress == wavesCount && OnLastWaveCompleted != null){
                     OnLastWaveCompleted();
-                }else
+                }else if (OnWaveCompleted != null)
                     OnWaveCompleted();
                 resting = true;
                 timeToNextWave = Time.time + restTime;
             }else{
-                OnWaveBegins();
+                if (OnWaveBegins != null)
+                 OnWaveBegins();
                 NextWave();
                 resting = false;
             }
@@ -111,6 +145,10 @@ public class EnemiesController : MonoBehaviour
     void HandleEnemySpaw(EnemyAI enemyAI){
         enemiesSpawed++;
         enemiesAlive++;
+        enemyAI.health += enemiesHealthIncreased;
+        /*for (int i = 0; i < levelCount; i++){
+            enemyAI.health += Random.Range(increaseEnemiesHealthRange.x, increaseEnemiesHealthRange.y);
+        }*/
         enemyAI.onDied += HandleEnemyDied;
         enemyAI.target = playerTransform;
     }
@@ -119,9 +157,18 @@ public class EnemiesController : MonoBehaviour
         enemiesAlive--;
     }
 
+    void HandleLastWaveCompleted(){
+        Clear();
+    }
+
     void HandleWaveCompleted(){}
 
     void HandleWaveBegins(){}
+
+    void NewLevelLoaded(Scene scene, LoadSceneMode mode){
+        if (scene.buildIndex == 2)
+            Initialize();
+    }
 
     void OnGUI(){
         if (!debug) return;

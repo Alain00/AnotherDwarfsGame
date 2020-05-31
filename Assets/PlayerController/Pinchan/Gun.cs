@@ -75,21 +75,26 @@ public class Gun : MonoBehaviour
     }
 
     void Reload(){
-       
-        int diff = Ammo - Charger;
-        if (diff >= 0){
+        if (Ammo == 0) return;
+        //int diff = Ammo - Charger;
+        //if (diff >= 0){
             int diffCharger = Charger - ChargerLeft;
             if (diffCharger == 0) return;
-            Ammo -= diffCharger;
-            ChargerLeft = Charger;
+            if (Ammo - diffCharger >= 0){
+                Ammo -= diffCharger;
+                ChargerLeft += diffCharger;
+            }else{
+                ChargerLeft += Ammo;
+                Ammo = 0;
+            }
             /*if(Ammo < 0){
                 ChargerLeft-= Ammo;
                 Ammo = 0;
             }*/
-        }else{
+       /* }else{
             Ammo = 0;
             ChargerLeft = Ammo;
-        }
+        }*/
         Ammo = Mathf.Max(Ammo, 0);
         ChargerLeft = Mathf.Max(ChargerLeft, 0);
     }

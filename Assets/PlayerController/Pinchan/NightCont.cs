@@ -51,6 +51,9 @@ public class NightCont : MonoBehaviour
         Debug.Log("MissionDONE");
         //Cargar otra scene
         SceneManager.LoadScene(1, LoadSceneMode.Single);
+        int levelsCompleted = PlayerPrefs.GetInt("LevelsCompleted");
+        if (levelsCompleted < 0) levelsCompleted = 0;
+        PlayerPrefs.SetInt("LevelsCompleted", levelsCompleted+1);
 
     }
 }
