@@ -77,7 +77,7 @@ public class Gun : MonoBehaviour
     void Reload(){
        
         int diff = Ammo - Charger;
-        if (diff > 0){
+        if (diff >= 0){
             int diffCharger = Charger - ChargerLeft;
             if (diffCharger == 0) return;
             Ammo -= diffCharger;
