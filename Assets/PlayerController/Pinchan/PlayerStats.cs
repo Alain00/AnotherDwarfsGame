@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     public float MaxHealth;
     public float CurHealth;
+    public GameObject HitSFX;
     void Start()
     {
         CurHealth = MaxHealth;
@@ -16,5 +17,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void ReciveDamage(float Damage){
         CurHealth -= Damage;
+        GameObject Current = Instantiate(HitSFX,transform.position, Quaternion.identity);
+        Destroy(Current , 2);
     }
 }

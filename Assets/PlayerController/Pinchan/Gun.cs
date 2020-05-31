@@ -23,6 +23,7 @@ public class Gun : MonoBehaviour
     public float ShakeStrenght;
     public bool Comprada;
     public GameObject ammoItem;
+    public AudioSource ReloadSound;
     
 
     public void Start(){
@@ -35,6 +36,7 @@ public class Gun : MonoBehaviour
     public void Update(){
         if(Input.GetKeyDown(KeyCode.R)){
             Reload();
+            ReloadSound.Play();
         }
         
     }
