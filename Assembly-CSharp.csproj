@@ -72,6 +72,7 @@
      <Compile Include="Assets\PlayerController\Pinchan\StoreCanvas.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\StoreManager.cs" />
      <Compile Include="Assets\PlayerController\Pinchan\Torch.cs" />
+     <Compile Include="Assets\PlayerController\Water\TransitionSceneScript.cs" />
      <Compile Include="Assets\PlayerController\Water\WaterMeshGenerator.cs" />
      <Compile Include="Assets\PlayerController\Water\waterNoise.cs" />
      <Compile Include="Assets\RandomAudioSelector.cs" />
