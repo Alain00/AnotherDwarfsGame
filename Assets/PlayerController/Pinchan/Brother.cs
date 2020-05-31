@@ -40,10 +40,10 @@ public class Brother : MonoBehaviour
         Cursor.visible = Open;
         if(Open){
             CameraController.Offset += Vector3.up * 15;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
         }else{ 
             CameraController.Offset -= Vector3.up * 15;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
         }
         Store.SetActive(Open);
         CloseText.SetActive(Open);
@@ -53,7 +53,9 @@ public class Brother : MonoBehaviour
     }
 
     void OnWaveBegins(){
-        Open = false;
-        OpenStore(false);
+        if (Open){
+            Open = false;
+            OpenStore(false);
+        }
     }
 }
