@@ -698,16 +698,16 @@ MonoBehaviour:
   maxHealth: 100
   target: {fileID: 0}
   minDistance: 4
-  minSpeed: 10
-  maxSpeed: 10
+  minSpeed: 8
+  maxSpeed: 9
   attacks:
   - index: 1
-    cooldown: 0.5
+    cooldown: 2
     animationOffset: 0.3
     damage: 1
     distance: 3
   - index: 2
-    cooldown: 0.5
+    cooldown: 2
     animationOffset: 0.11
     damage: 1
     distance: 3

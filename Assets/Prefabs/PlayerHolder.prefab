@@ -3860,7 +3860,7 @@ MonoBehaviour:
     type: 3}
   ShakeDuration: 0.2
   ShakeStrenght: 0.2
-  damage: 20
+  damage: 40
   GranadeToInstantiate: {fileID: 4018885440605429404, guid: 9e40cb280e4531e4da305de5c3f196c4,
     type: 3}
   Player: {fileID: 9217287777988210693}
@@ -4796,7 +4796,7 @@ MonoBehaviour:
     type: 3}
   ShakeDuration: 0.5
   ShakeStrenght: 0.6
-  damage: 20
+  damage: 100
   GranadeToInstantiate: {fileID: 8990690890998900839, guid: db02694ba0e69d64996aa9430232985d,
     type: 3}
   Player: {fileID: 9217287777988210693}
@@ -5997,7 +5997,7 @@ MonoBehaviour:
     type: 3}
   ShakeDuration: 0.4
   ShakeStrenght: 0.4
-  damage: 20
+  damage: 60
   GranadeToInstantiate: {fileID: 3310106318963737421, guid: ed4fe9d8ce142bd4caf6740cc8378a5a,
     type: 3}
   Player: {fileID: 9217287777988210693}

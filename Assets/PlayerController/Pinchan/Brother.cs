@@ -23,6 +23,7 @@ public class Brother : MonoBehaviour
         CloseText.SetActive(false);
         ExclamationSign.SetActive(false);
         gameObject.SetActive(false);
+        EnemiesController.main.OnWaveBegins += OnWaveBegins;
     }
 
     
@@ -36,13 +37,23 @@ public class Brother : MonoBehaviour
         }
     }
     void OpenStore( bool Open ){
-        if(Open)
-        CameraController.Offset += Vector3.up * 15;
-        else  CameraController.Offset -= Vector3.up * 15;
+        Cursor.visible = Open;
+        if(Open){
+            CameraController.Offset += Vector3.up * 15;
+            Cursor.lockState = CursorLockMode.None;
+        }else{ 
+            CameraController.Offset -= Vector3.up * 15;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         Store.SetActive(Open);
         CloseText.SetActive(Open);
         ExclamationSign.SetActive(Open);
         Player.enabled = !Open;
        
+    }
+
+    void OnWaveBegins(){
+        Open = false;
+        OpenStore(false);
     }
 }

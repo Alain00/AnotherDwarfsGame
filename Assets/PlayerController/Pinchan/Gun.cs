@@ -28,8 +28,9 @@ public class Gun : MonoBehaviour
 
     public void Start(){
         DontDestroyOnLoad(this);
-        ChargerLeft = Charger;
-        Ammo -= Charger;
+        /*ChargerLeft = Charger;
+        Ammo -= Charger;*/
+        Reload();
         Random.InitState(System.DateTime.Now.Millisecond);
     }
 
@@ -74,12 +75,23 @@ public class Gun : MonoBehaviour
     }
 
     void Reload(){
-         Ammo -= Charger;
-         ChargerLeft = Charger;
-         if(Ammo < 0){
-            ChargerLeft-= Ammo;
+       
+        int diff = Ammo - Charger;
+        if (diff > 0){
+            int diffCharger = Charger - ChargerLeft;
+            if (diffCharger == 0) return;
+            Ammo -= diffCharger;
+            ChargerLeft = Charger;
+            /*if(Ammo < 0){
+                ChargerLeft-= Ammo;
+                Ammo = 0;
+            }*/
+        }else{
             Ammo = 0;
+            ChargerLeft = Ammo;
         }
+        Ammo = Mathf.Max(Ammo, 0);
+        ChargerLeft = Mathf.Max(ChargerLeft, 0);
     }
 
     void OutOfAmmo(){
