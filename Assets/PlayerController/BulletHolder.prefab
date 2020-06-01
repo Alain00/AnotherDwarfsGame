@@ -127,5 +127,6 @@ MonoBehaviour:
   AutoDestruct: 5
   layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3857
   ImpactVFX: {fileID: 0}
+  EnemyImpactVFX: {fileID: 0}
