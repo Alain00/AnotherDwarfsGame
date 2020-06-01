@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5110262631287321194}
   - component: {fileID: 7057904659907041362}
   m_Layer: 0
-  m_Name: HealthItem
+  m_Name: MoneyItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2534502fd30879b4ab997ff22fbee155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyMinMax: {x: 100, y: 200}
+  moneyMinMax: {x: 5, y: 8}
