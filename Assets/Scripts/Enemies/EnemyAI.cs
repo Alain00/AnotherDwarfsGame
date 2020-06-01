@@ -40,7 +40,7 @@ public class EnemyAI : Destructible
     void Update(){
         if (hasDied) return;
         if (isUnderFire && !inFireVFX.activeInHierarchy){
-            characterMovement.SetSpeed(speed/2);
+            characterMovement.SetSpeed(speed/3);
             inFireVFX.SetActive(true);
         }else if (inFireVFX.activeInHierarchy){
             characterMovement.SetSpeed(speed);
