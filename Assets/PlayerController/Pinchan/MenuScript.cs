@@ -16,7 +16,9 @@ public class MenuScript : MonoBehaviour
 
     void Start()
     {
-        
+        Destroy(FindObjectOfType<EnemiesController>());
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
