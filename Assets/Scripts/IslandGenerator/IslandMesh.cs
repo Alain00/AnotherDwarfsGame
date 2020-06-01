@@ -14,9 +14,9 @@ public class IslandMesh : MonoBehaviour
         }
         mesh = filter.sharedMesh;
         mesh.Clear();
-        mesh.vertices = vertices;
-        mesh.triangles = triangles;
-        mesh.colors = colors;
+        mesh.SetVertices(vertices);
+        mesh.SetTriangles(triangles, 0);
+        mesh.SetColors(colors);
         mesh.RecalculateNormals();
         return mesh;
     }
