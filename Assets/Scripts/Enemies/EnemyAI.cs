@@ -37,7 +37,7 @@ public class EnemyAI : Destructible
 
     void Update(){
         if (hasDied) return;
-        if(IsUnderFire)
+        
         FollowTarget();
     }
 
