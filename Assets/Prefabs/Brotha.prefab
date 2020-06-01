@@ -1150,7 +1150,7 @@ MonoBehaviour:
   Store: {fileID: 0}
   Player: {fileID: 0}
   CloseText: {fileID: 0}
-  ExclamationSign: {fileID: 0}
+  ExclamationSign: {fileID: 14985772006142484}
 --- !u!136 &8607525826652993091
 CapsuleCollider:
   m_ObjectHideFlags: 0
