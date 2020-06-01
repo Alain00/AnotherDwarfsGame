@@ -135,7 +135,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: leave
-  m_Speed: 0.03
+  m_Speed: 0.02
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1879114688471804599}
@@ -162,7 +162,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: arrive
-  m_Speed: 0.03
+  m_Speed: 0.02
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4565538904822958171}

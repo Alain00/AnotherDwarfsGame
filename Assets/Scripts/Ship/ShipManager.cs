@@ -10,7 +10,7 @@ public class ShipManager : MonoBehaviour
 
     void Start(){
         Vector3 point = new Vector3(0,50,0) + transform.position;
-        Vector3 brotherPoint = point + new Vector3(0,0, 10);
+        Vector3 brotherPoint = point + new Vector3(0,0, -10);
         RaycastHit hit;
         if (Physics.Raycast(point, -transform.up, out hit)){
             transform.position = hit.point;

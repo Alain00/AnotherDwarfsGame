@@ -174,6 +174,10 @@ public class EnemiesController : MonoBehaviour
         return waveProgress >= wavesCount;
     }
 
+    public int GetCurrentRestingTime(){
+        return Mathf.FloorToInt(Mathf.Max(0, timeToNextWave - Time.time));
+    }
+
     void OnGUI(){
         if (!debug) return;
         GUILayout.Label("Resting: " + resting.ToString());
