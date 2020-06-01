@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     //ItemsStuff
     public List<Item> RightHand = new List<Item>();
     int itemIndice;
-    Item CurrentItem;
+    public Item CurrentItem;
     public Image IIconField;
     public LayerMask layerMask;
     
@@ -62,16 +62,12 @@ public class PlayerController : MonoBehaviour
 
 
         RightHand.AddRange(GetComponentsInChildren<Item>());
-        if(RightHand.Count > 0){
-            CurrentItem = RightHand[0];
-            IIconField.sprite = CurrentItem.sprite;
-        }    
+    
         //Ponerlo en una posicion pegada al suelo
         SetPosInWorld Pos = SetPosInWorld.instance;
         transform.position =  Pos.SetPos(transform.position);
 
         WIconField.sprite = CurrentGun.sprite;
-        
 
     }
 
@@ -118,7 +114,8 @@ public class PlayerController : MonoBehaviour
             if (CoolDown <= 0)
                 Shot();
         }
-        else if (Input.GetButtonDown("Fire2")){
+        else if (Input.GetButtonDown("Fire2") && CurrentItem != null){
+            
             OnClickLookDir();
             ItemAction();
         }  
@@ -189,6 +186,7 @@ public class PlayerController : MonoBehaviour
     }
 
    void ChangeItemRightHand(){
+       if(CurrentItem != null){
         RightHand[itemIndice].gameObject.SetActive(false);
         do{
             itemIndice++;
@@ -196,11 +194,11 @@ public class PlayerController : MonoBehaviour
                 itemIndice = 0;
             if(itemIndice < 0)
              itemIndice = RightHand.Count - 1;
-        }
-        while(RightHand[itemIndice].Comprada == false);    
+        }while(RightHand[itemIndice].Comprada == false);    
         CurrentItem = RightHand[itemIndice];            
         RightHand[itemIndice].gameObject.SetActive(true);
         IIconField.sprite = CurrentItem.sprite;
+        }
     }
 
 
