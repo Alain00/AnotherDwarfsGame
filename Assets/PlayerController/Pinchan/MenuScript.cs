@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
+    public GameObject TutoButton;
     public GameObject StartGame;
     public GameObject Credits;
     public GameObject Exit;
@@ -25,6 +26,9 @@ public class MenuScript : MonoBehaviour
     }
     public void OnStartButton(){
         SceneManager.LoadScene(1);
+    }
+    public void OnTutoButton(){
+        SceneManager.LoadScene(3);
     }
      public void OnCreditsButton(){
         StartGame.SetActive(false);

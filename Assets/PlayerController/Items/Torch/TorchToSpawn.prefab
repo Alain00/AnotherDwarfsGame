@@ -14727,7 +14727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2381321705404974873}
-  - component: {fileID: 2381321705404974872}
+  - component: {fileID: 1808324452662974959}
   m_Layer: 0
   m_Name: TorchToSpawn
   m_TagString: Untagged
@@ -14751,7 +14751,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -24.435001, y: 0, z: 0}
---- !u!114 &2381321705404974872
+--- !u!114 &1808324452662974959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14760,12 +14760,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2381321705404974874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb8b4b6f6bd11446a825c584929cce9, type: 3}
+  m_Script: {fileID: 11500000, guid: 884e94f0cde656e478ce5d1bf3f75582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Comprada: 0
-  Ammo: 0
-  AntorchaDura: {fileID: 0}
+  radius: 10
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &9186997406798491926
 GameObject:
   m_ObjectHideFlags: 0

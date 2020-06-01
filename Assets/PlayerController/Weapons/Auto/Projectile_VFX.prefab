@@ -9698,3 +9698,5 @@ MonoBehaviour:
     m_Bits: 1847
   ImpactVFX: {fileID: 7456153741153647893, guid: a0cdf586f836c544ca0b73c88f1a8b46,
     type: 3}
+  EnemyImpactVFX: {fileID: 606783935798310059, guid: 47d3f85f5f5023f4590f8e0ce3cb5f43,
+    type: 3}

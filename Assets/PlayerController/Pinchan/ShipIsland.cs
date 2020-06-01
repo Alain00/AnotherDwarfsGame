@@ -15,6 +15,8 @@ public class ShipIsland : MonoBehaviour
     public float SmoothSpeed;
     public Brother bro;
     bool Once;
+
+    public AudioSource IgnitionSFX;
     void Awake(){
          bro = GameObject.FindObjectOfType<Brother>();
     }
@@ -40,6 +42,7 @@ public class ShipIsland : MonoBehaviour
     }
 
     public void Leave(){
+        IgnitionSFX.Play();
         Once = false;
         bro.gameObject.SetActive(false);
         leave = true;
@@ -47,6 +50,7 @@ public class ShipIsland : MonoBehaviour
     }
 
     public void ComeBack(){
+        IgnitionSFX.Play();
         ship.SetActive(true);
         leave = false;
         if(!Once){

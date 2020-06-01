@@ -10,7 +10,7 @@ public class BulletHolder : MonoBehaviour
     public float AutoDestruct =5;
     public LayerMask layerMask;
     public GameObject ImpactVFX;
-
+    public GameObject EnemyImpactVFX;
     void Start(){
         bullet = GetComponentInChildren<Transform>();
         StartCoroutine(PerformHit());
@@ -35,8 +35,10 @@ public class BulletHolder : MonoBehaviour
                 if (!col) yield return null;
                 if(col.gameObject.tag == "Enemy"){
                     col.gameObject.GetComponent<Destructible>().OnDamage(50);
-                }
-                Instantiate(ImpactVFX , hit.point , Quaternion.identity);
+                    Instantiate(EnemyImpactVFX , hit.point , Quaternion.identity);
+
+                }else Instantiate(ImpactVFX , hit.point , Quaternion.identity);
+                
                 Destroy(gameObject);
             }
             //Debug.Log(col.gameObject.name);

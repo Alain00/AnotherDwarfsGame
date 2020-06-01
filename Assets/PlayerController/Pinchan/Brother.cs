@@ -30,6 +30,7 @@ public class Brother : MonoBehaviour
     void Update()
     {
         if(Vector3.Distance(transform.position , player.position )  < radius ){
+            ExclamationSign.SetActive(true);
             if(Input.GetKeyDown(KeyCode.Space)){
                 Open = !Open;
                 OpenStore(Open); 
@@ -47,7 +48,7 @@ public class Brother : MonoBehaviour
         }
         Store.SetActive(Open);
         CloseText.SetActive(Open);
-        ExclamationSign.SetActive(Open);
+        ExclamationSign.SetActive(!Open);
         Player.enabled = !Open;
        
     }
