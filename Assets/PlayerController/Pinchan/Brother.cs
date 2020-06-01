@@ -13,11 +13,13 @@ public class Brother : MonoBehaviour
     public PlayerController Player;
     public GameObject CloseText;
     public GameObject ExclamationSign;
+    public GameObject ItemWindow;
     EnemiesController controller;
 
     void Awake(){
         Store = GameObject.Find("Shop");
         CloseText = GameObject.Find("CloseText");
+        ItemWindow = GameObject.FindObjectOfType<StoreManager>().ItemWindow;
         Player = GameObject.FindObjectOfType<PlayerController>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         CameraController = GameObject.FindObjectOfType<FollowPlayer>();
@@ -40,6 +42,9 @@ public class Brother : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Space)){
                 Open = !Open;
                 OpenStore(Open); 
+                if(ItemWindow.activeSelf)
+                    ItemWindow.SetActive(false);
+
             }
             if (Input.GetKeyDown(KeyCode.KeypadEnter)){
                 if (controller.IsLastWave()){
@@ -50,6 +55,7 @@ public class Brother : MonoBehaviour
                 }
             }
         }
+        else ExclamationSign.SetActive(false);
     }
     void OpenStore( bool Open ){
         Cursor.visible = Open;

@@ -33,10 +33,12 @@ public class StoreManager : MonoBehaviour
         TextField  = GameObject.Find("TextField").GetComponent<Text>();
         PriceField = GameObject.Find("Price").GetComponent<Text>();
         ItemWindow.SetActive(false);
+       
     }
 
     void Start()
     {
+         
     }
 
     void Update()
@@ -106,9 +108,10 @@ public class StoreManager : MonoBehaviour
        if(CurrentMoney >= int.Parse(PriceField.text)){
            CurrentMoney -= int.Parse(PriceField.text);
            GameObject Equiped = GameObject.Find("Equiped"+ Current.gameObject.name);
-           Debug.Log(Equiped.gameObject.name);
            if(!Current.Gun){
-               
+               PlayerController controller = GameObject.FindObjectOfType<PlayerController>();
+               if(controller.CurrentItem == null)
+                    controller.CurrentItem = Equiped.GetComponent<Item>();
                Equiped.GetComponent<Item>().Ammo ++;
                Equiped.GetComponent<Item>().Comprada = true;
            }
