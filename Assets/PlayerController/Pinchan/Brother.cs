@@ -37,7 +37,10 @@ public class Brother : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Space)){
                 Open = !Open;
                 OpenStore(Open); 
-            }   
+            }
+            if (Input.GetKeyDown(KeyCode.KeypadEnter)){
+                
+            }
         }
     }
     void OpenStore( bool Open ){

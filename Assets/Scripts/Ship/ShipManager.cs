@@ -23,6 +23,7 @@ public class ShipManager : MonoBehaviour
         controller = EnemiesController.main;
         controller.OnWaveBegins += Leave;
         controller.OnWaveCompleted += Arrive;
+        controller.OnLastWaveCompleted += Arrive;
     }
 
     void Arrive(){
