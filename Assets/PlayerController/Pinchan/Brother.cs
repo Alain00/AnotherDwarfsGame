@@ -12,14 +12,17 @@ public class Brother : MonoBehaviour
     public PlayerController Player;
     public GameObject CloseText;
     public GameObject ExclamationSign;
-    void Start()
-    {
+    
+    void Awake(){
         Store = GameObject.Find("Shop");
         CloseText = GameObject.Find("CloseText");
         Player = GameObject.FindObjectOfType<PlayerController>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         CameraController = GameObject.FindObjectOfType<FollowPlayer>();
-        Store.SetActive(false);
+         Store.SetActive(false);
+    }
+    void Start()
+    {
         CloseText.SetActive(false);
         ExclamationSign.SetActive(false);
         gameObject.SetActive(false);
