@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Brother : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class Brother : MonoBehaviour
     public PlayerController Player;
     public GameObject CloseText;
     public GameObject ExclamationSign;
-    
+    EnemiesController controller;
+
     void Awake(){
         Store = GameObject.Find("Shop");
         CloseText = GameObject.Find("CloseText");
@@ -20,6 +22,7 @@ public class Brother : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         CameraController = GameObject.FindObjectOfType<FollowPlayer>();
          Store.SetActive(false);
+         controller = EnemiesController.main;
     }
     void Start()
     {
@@ -39,7 +42,12 @@ public class Brother : MonoBehaviour
                 OpenStore(Open); 
             }
             if (Input.GetKeyDown(KeyCode.KeypadEnter)){
-                
+                if (controller.IsLastWave()){
+                    SceneManager.LoadScene(1, LoadSceneMode.Single);
+                    int levelsCompleted = PlayerPrefs.GetInt("LevelsCompleted");
+                    if (levelsCompleted < 0) levelsCompleted = 0;
+                    PlayerPrefs.SetInt("LevelsCompleted", levelsCompleted+1);
+                }
             }
         }
     }

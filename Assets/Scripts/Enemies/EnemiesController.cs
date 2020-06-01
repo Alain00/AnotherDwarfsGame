@@ -170,6 +170,10 @@ public class EnemiesController : MonoBehaviour
             Initialize();
     }
 
+    public bool IsLastWave(){
+        return waveProgress >= wavesCount;
+    }
+
     void OnGUI(){
         if (!debug) return;
         GUILayout.Label("Resting: " + resting.ToString());
