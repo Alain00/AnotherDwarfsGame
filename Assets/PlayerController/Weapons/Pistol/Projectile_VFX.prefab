@@ -9695,7 +9695,7 @@ MonoBehaviour:
   AutoDestruct: 5
   layerMask:
     serializedVersion: 2
-    m_Bits: 1847
+    m_Bits: 1843
   ImpactVFX: {fileID: 2996084386875915308, guid: f21bcd4abdf1dcf4cb0bb04235fc9b4a,
     type: 3}
   EnemyImpactVFX: {fileID: 606783935798310059, guid: 47d3f85f5f5023f4590f8e0ce3cb5f43,

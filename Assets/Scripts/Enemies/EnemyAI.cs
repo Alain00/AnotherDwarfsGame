@@ -21,6 +21,8 @@ public class EnemyAI : Destructible
     public AttackSettings[] attacks;
     public Transform attackOrigin;
     public LayerMask attackFilter;
+    public bool isUnderFire = false;
+    public GameObject inFireVFX;
     CharacterMovement characterMovement;
     float speed;
     float nexAttack = 0;
@@ -30,14 +32,20 @@ public class EnemyAI : Destructible
 
     void Start(){
         characterMovement = GetComponent<CharacterMovement>();
-        characterMovement.SetSpeed(Random.Range(minSpeed, maxSpeed));
         animator = characterMovement.animator;
         speed = Random.Range(minSpeed, maxSpeed);
+        characterMovement.SetSpeed(speed);
     }
 
     void Update(){
         if (hasDied) return;
-        
+        if (isUnderFire && !inFireVFX.activeInHierarchy){
+            characterMovement.SetSpeed(speed/3);
+            inFireVFX.SetActive(true);
+        }else if (inFireVFX.activeInHierarchy){
+            characterMovement.SetSpeed(speed);
+            inFireVFX.SetActive(false);
+        }
         FollowTarget();
     }
 
