@@ -18,7 +18,7 @@ public class EnemiesController : MonoBehaviour
     public Vector2 increaseEnemiesHealthRange = new Vector2(0,0);
     [Header("Debug")]
     public int aproxSpawersCount = 0;
-    [ReadOnly] public int[] aproxEnemiesCountPerWave;
+    public int[] aproxEnemiesCountPerWave;
     public bool debug;
     
     int waveProgress = 0;
@@ -49,7 +49,7 @@ public class EnemiesController : MonoBehaviour
         }
     }
 
-    void OnValidate(){
+    /*void OnValidate(){
         // Debug.Log("Hola");
         aproxEnemiesCountPerWave = new int[wavesCount];
         float currentWaveTime = waveTime;
@@ -62,7 +62,7 @@ public class EnemiesController : MonoBehaviour
         }
         //aproxEnemiesCountNextWave = (int) waveTime / (int)(enemiesSpawDelayBase - enemiesSpawDelayBase / enemiesSpawDecreaseFraction) * aproxSpawersCount;
     }
-
+*/
     void Start(){
        
         

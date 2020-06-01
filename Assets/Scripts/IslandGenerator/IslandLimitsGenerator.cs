@@ -14,10 +14,10 @@ public class IslandLimitsGenerator : MonoBehaviour
         Initialize();
     }
 
-    void OnValidate(){
+    /*void OnValidate(){
         // Initialize();
     }
-
+*/
     void Initialize(){
         generator = GetComponent<IslandGenerator>();
         GenerateLimits();

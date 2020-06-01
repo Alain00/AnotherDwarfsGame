@@ -37,10 +37,9 @@ public class IslandGenerator : MonoBehaviour
         detailsGenerator.GenerateDetails(detailPoints);
     }
 
-    void OnValidate(){
+    /*void OnValidate(){
         GenerateMesh();
-    }
-
+    }*/
     void GenerateMesh(){
         if (resolution == 0) return;
         
