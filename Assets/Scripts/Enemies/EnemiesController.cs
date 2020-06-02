@@ -158,7 +158,7 @@ public class EnemiesController : MonoBehaviour
     }
 
     void HandleLastWaveCompleted(){
-        Clear();
+        //Clear();
     }
 
     void HandleWaveCompleted(){}
@@ -166,6 +166,7 @@ public class EnemiesController : MonoBehaviour
     void HandleWaveBegins(){}
 
     void NewLevelLoaded(Scene scene, LoadSceneMode mode){
+        Clear();
         if (scene.buildIndex == 2)
             Initialize();
     }
