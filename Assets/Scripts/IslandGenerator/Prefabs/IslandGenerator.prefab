@@ -955,12 +955,12 @@ MonoBehaviour:
       maxHeight: 7
     - prefabs:
       - {fileID: 8011373935165122674, guid: 9c1351e83b774324e84cd7b0c4d73b62, type: 3}
-      radius: 60
+      radius: 90
       numSamplesBeforeRejection: 20
       minHeight: 0
       maxHeight: 0.01
     maxHeight: 50
-    debug: 1
+    debug: 0
   navMeshSurface: {fileID: 3018158767741315685}
 --- !u!114 &3018158767741315685
 MonoBehaviour:
