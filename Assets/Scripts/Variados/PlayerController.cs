@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
 
    void ChangeItemRightHand(){
        if(CurrentItem != null){
-        RightHand[itemIndice].gameObject.SetActive(false);
+        //RightHand[itemIndice].gameObject.SetActive(false);
         do{
             itemIndice++;
             if(itemIndice == RightHand.Count)
@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour
              itemIndice = RightHand.Count - 1;
         }while(RightHand[itemIndice].Comprada == false);    
         CurrentItem = RightHand[itemIndice];            
-        RightHand[itemIndice].gameObject.SetActive(true);
+        //RightHand[itemIndice].gameObject.SetActive(true);
         IIconField.sprite = CurrentItem.sprite;
         }
     }

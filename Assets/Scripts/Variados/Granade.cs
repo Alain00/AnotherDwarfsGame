@@ -22,6 +22,7 @@ public class Granade : Item
 
       if(Ammo > 0){
         ThrowGranade(Dir);
+        Ammo--;
       }
       else{
           Debug.Log("OUT OF AMMO");
