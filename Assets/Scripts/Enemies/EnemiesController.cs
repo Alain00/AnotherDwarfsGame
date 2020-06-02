@@ -100,7 +100,7 @@ public class EnemiesController : MonoBehaviour
         if (Time.time > timeToNextWave){
             if (enemiesAlive > 0) return;
             if (!resting){
-                if (waveProgress == wavesCount && OnLastWaveCompleted != null){
+                if (waveProgress >= wavesCount && OnLastWaveCompleted != null){
                     OnLastWaveCompleted();
                 }else if (OnWaveCompleted != null)
                     OnWaveCompleted();
