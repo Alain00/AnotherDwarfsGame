@@ -25,11 +25,14 @@ public class EnemySFX : MonoBehaviour
             cooldown = Random.Range(5,15);
             MonsterGruarSFX.Play();
         }
-        if(anim.GetBool("died"))
-            MonsterGruarSFX.Stop();
+       
         if(anim.GetInteger("attack") != 0){
             AttackSFX.Play();
         }
+        if(anim.GetBool("died")){
+            MonsterGruarSFX.Stop();
+            AttackSFX.Stop();
+        }   
 
     }
 }

@@ -30,7 +30,11 @@ public class Brother : MonoBehaviour
     {
         CloseText.SetActive(false);
         ExclamationSign.SetActive(false);
+        if(SceneManager.GetActiveScene().buildIndex != 3)
         gameObject.SetActive(false);
+        else {
+            transform.position = SetPosInWorld.instance.SetPos(transform.position);
+        }
         EnemiesController.main.OnWaveBegins += OnWaveBegins;
     }
 
@@ -40,11 +44,9 @@ public class Brother : MonoBehaviour
         if(Vector3.Distance(transform.position , player.position )  < radius ){
             ExclamationSign.SetActive(true);
             if(Input.GetKeyDown(KeyCode.Space)){
+                FixStore();
                 Open = !Open;
                 OpenStore(Open); 
-                if(ItemWindow.activeSelf)
-                    ItemWindow.SetActive(false);
-
             }
             if (Input.GetKeyDown(KeyCode.KeypadEnter)){
                 if (controller.IsLastWave()){
@@ -75,8 +77,21 @@ public class Brother : MonoBehaviour
 
     void OnWaveBegins(){
         if (Open){
+            FixStore();
             Open = false;
             OpenStore(false);
         }
+    }
+    void FixStore(){
+          if(ItemWindow.activeSelf)
+                    ItemWindow.SetActive(false);
+                BuyableItem Cur = Store.GetComponent<StoreManager>().Current; 
+                Store.GetComponent<StoreManager>().IsFocusing = false;   
+                if(Cur != null){
+                    Cur.Focus = false;
+                    Cur.transform.localEulerAngles = Cur.StartRot;
+                    Cur.transform.localPosition = Cur.StartPos;
+                    Cur = null;
+                }   
     }
 }

@@ -244,7 +244,6 @@ GameObject:
   - component: {fileID: 9217287777596426603}
   - component: {fileID: 9217287777596426600}
   - component: {fileID: 9217287777596426601}
-  - component: {fileID: 9217287777596426602}
   m_Layer: 12
   m_Name: HolderShotgun (2)
   m_TagString: Untagged
@@ -313,19 +312,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9217287777596426602
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217287777596426604}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9217287777692206872
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +678,8 @@ MonoBehaviour:
   SmoothSpeed: 0.3
   CamDist: {x: 0, y: 2, z: -6}
   Rotation: {x: 0, y: 0, z: 0}
+  StartPos: {x: 0, y: 0, z: 0}
+  StartRot: {x: 0, y: 0, z: 0}
   Gun: 0
   AmmoCant: 0
 --- !u!65 &9217287777782933190
@@ -706,7 +694,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.74, z: 0}
+  m_Center: {x: 0, y: 0.74, z: -0.41}
 --- !u!1 &9217287777821694992
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +885,8 @@ MonoBehaviour:
   SmoothSpeed: 0.3
   CamDist: {x: 0, y: 2, z: -6}
   Rotation: {x: 0, y: 0, z: 0}
+  StartPos: {x: 0, y: 0, z: 0}
+  StartRot: {x: 0, y: 0, z: 0}
   Gun: 0
   AmmoCant: 0
 --- !u!65 &9217287777919475143
@@ -911,7 +901,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.19}
 --- !u!1 &9217287777988210694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,7 +1863,6 @@ GameObject:
   - component: {fileID: 9217287778201642526}
   - component: {fileID: 9217287778201642523}
   - component: {fileID: 9217287778201642524}
-  - component: {fileID: 9217287778201642525}
   m_Layer: 12
   m_Name: HolderShotgun (5)
   m_TagString: Untagged
@@ -1942,19 +1931,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9217287778201642525
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217287778201642527}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9217287778217624779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,7 +2114,6 @@ GameObject:
   - component: {fileID: 9217287778338277639}
   - component: {fileID: 9217287778338277636}
   - component: {fileID: 9217287778338277637}
-  - component: {fileID: 9217287778338277638}
   m_Layer: 12
   m_Name: HolderShotgun
   m_TagString: Untagged
@@ -2207,19 +2182,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9217287778338277638
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217287778338277688}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9217287778341177651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,7 +2382,6 @@ GameObject:
   - component: {fileID: 9217287778354133363}
   - component: {fileID: 9217287778354133360}
   - component: {fileID: 9217287778354133361}
-  - component: {fileID: 9217287778354133362}
   m_Layer: 12
   m_Name: HolderShotgun (4)
   m_TagString: Untagged
@@ -2489,19 +2450,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9217287778354133362
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217287778354133364}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9217287778360352330
 GameObject:
   m_ObjectHideFlags: 0
@@ -2891,7 +2839,6 @@ GameObject:
   - component: {fileID: 9217287778435579399}
   - component: {fileID: 9217287778435579396}
   - component: {fileID: 9217287778435579397}
-  - component: {fileID: 9217287778435579398}
   m_Layer: 12
   m_Name: HolderShotgun (3)
   m_TagString: Untagged
@@ -2960,19 +2907,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9217287778435579398
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217287778435579448}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9217287778528393344
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,7 +3072,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   InteractableTag: Buyable
+  Current: {fileID: 0}
   RotSpeed: 800
+  IsFocusing: 0
   Items:
   - {fileID: 9217287779431196736}
   - {fileID: 9217287778646620984}
@@ -3170,6 +3106,7 @@ MonoBehaviour:
   HoverSFX: {fileID: 8300000, guid: b2f08c41781f3254ca906683af3d23ac, type: 3}
   OnClickSFX: {fileID: 8300000, guid: a85f808370c0f4f40aa01c4d73812c0b, type: 3}
   audioSource: {fileID: 90937873}
+  UICamera: {fileID: 37961078}
 --- !u!82 &90937873
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3473,6 +3410,8 @@ MonoBehaviour:
   SmoothSpeed: 0.3
   CamDist: {x: 4, y: -2, z: -8}
   Rotation: {x: -90, y: 0, z: 0}
+  StartPos: {x: 0, y: 0, z: 0}
+  StartRot: {x: 0, y: 0, z: 0}
   Gun: 1
   AmmoCant: 120
 --- !u!65 &9217287778646620935
@@ -3487,7 +3426,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.6082234, y: 24.956043, z: 4.749676}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -1.4, y: 0, z: 0}
 --- !u!1 &9217287778675898886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3538,6 +3477,8 @@ MonoBehaviour:
   SmoothSpeed: 0.3
   CamDist: {x: 0, y: 2, z: -6}
   Rotation: {x: 0, y: 0, z: 0}
+  StartPos: {x: 0, y: 0, z: 0}
+  StartRot: {x: 0, y: 0, z: 0}
   Gun: 0
   AmmoCant: 0
 --- !u!65 &9217287778675898884
@@ -3552,7 +3493,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.42, y: 0, z: 0}
 --- !u!1 &9217287778708077367
 GameObject:
   m_ObjectHideFlags: 0
@@ -3713,6 +3654,8 @@ MonoBehaviour:
   SmoothSpeed: 0.3
   CamDist: {x: 0, y: 2, z: -6}
   Rotation: {x: 0, y: 0, z: 0}
+  StartPos: {x: 0, y: 0, z: 0}
+  StartRot: {x: 0, y: 0, z: 0}
   Gun: 0
   AmmoCant: 0
 --- !u!65 &9217287778763223941
@@ -3727,7 +3670,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.46}
 --- !u!1 &9217287778789034674
 GameObject:
   m_ObjectHideFlags: 0
@@ -3975,6 +3918,8 @@ MonoBehaviour:
   SmoothSpeed: 0.3
   CamDist: {x: 0, y: 2, z: -6}
   Rotation: {x: 0, y: 0, z: 0}
+  StartPos: {x: 0, y: 0, z: 0}
+  StartRot: {x: 0, y: 0, z: 0}
   Gun: 0
   AmmoCant: 0
 --- !u!65 &9217287778916832218
@@ -3989,7 +3934,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.21, z: 0}
+  m_Center: {x: 0, y: 0.21, z: -0.42}
 --- !u!1 &9217287778953762419
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,6 +4380,8 @@ MonoBehaviour:
   SmoothSpeed: 0.3
   CamDist: {x: 0, y: 2, z: -6}
   Rotation: {x: 0, y: -60, z: 0}
+  StartPos: {x: 0, y: 0, z: 0}
+  StartRot: {x: 0, y: 0, z: 0}
   Gun: 0
   AmmoCant: 0
 --- !u!65 &9217287779051354602
@@ -4875,7 +4822,6 @@ GameObject:
   - component: {fileID: 9217287779237228906}
   - component: {fileID: 9217287779237228919}
   - component: {fileID: 9217287779237228904}
-  - component: {fileID: 9217287779237228905}
   m_Layer: 12
   m_Name: HolderShotgun (1)
   m_TagString: Untagged
@@ -4944,19 +4890,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9217287779237228905
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217287779237228907}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9217287779270209438
 GameObject:
   m_ObjectHideFlags: 0
@@ -5581,6 +5514,8 @@ MonoBehaviour:
   SmoothSpeed: 0.3
   CamDist: {x: -0.15, y: 2, z: -8}
   Rotation: {x: 0, y: 0, z: 0}
+  StartPos: {x: 0, y: 0, z: 0}
+  StartRot: {x: 0, y: 0, z: 0}
   Gun: 1
   AmmoCant: 80
 --- !u!65 &9217287779431196751
@@ -5595,7 +5530,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.0549667, y: 14.5204935, z: 2.9008582}
-  m_Center: {x: 0, y: -0.44, z: 0}
+  m_Center: {x: 0.6, y: -0.44, z: 0.45}
 --- !u!1 &9217287779462172842
 GameObject:
   m_ObjectHideFlags: 0

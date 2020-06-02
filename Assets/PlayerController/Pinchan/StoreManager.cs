@@ -8,9 +8,9 @@ public class StoreManager : MonoBehaviour
     public PlayerInventory inventory;
     public string InteractableTag;
     Transform LastItem;
-    BuyableItem Current;
+    public BuyableItem Current;
     public float RotSpeed;
-    bool IsFocusing;
+    public bool IsFocusing;
     
     public Transform[] Items;
     public string[] Descripcion;
@@ -24,15 +24,16 @@ public class StoreManager : MonoBehaviour
     public AudioClip HoverSFX;
     public AudioClip OnClickSFX;
     public AudioSource audioSource;
+    public Camera UICamera;
     
     void Awake(){
 
-        ItemWindow = GameObject.Find("StoreCanvas");
-        Animator   = ItemWindow.GetComponent<Animator>();
+        //ItemWindow = GameObject.Find("StoreCanvas");
+       // Animator   = ItemWindow.GetComponent<Animator>();
         inventory  = GameObject.FindObjectOfType<PlayerInventory>();
-        TextField  = GameObject.Find("TextField").GetComponent<Text>();
-        PriceField = GameObject.Find("Price").GetComponent<Text>();
-        ItemWindow.SetActive(false);
+        //TextField  = GameObject.Find("TextField").GetComponent<Text>();
+       // PriceField = GameObject.Find("Price").GetComponent<Text>();
+        //ItemWindow.SetActive(false);
        
     }
 
@@ -73,7 +74,7 @@ public class StoreManager : MonoBehaviour
             }
         }
         else if(IsFocusing == false){
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = UICamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if(Physics.Raycast(ray , out hit)){
                 if(LastItem != hit.transform && LastItem != null){
