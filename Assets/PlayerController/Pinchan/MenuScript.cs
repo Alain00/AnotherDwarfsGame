@@ -33,6 +33,7 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene(3);
     }
      public void OnCreditsButton(){
+        TutoButton.SetActive(false);
         StartGame.SetActive(false);
         Credits.SetActive(false);
         Exit.SetActive(false);
@@ -43,7 +44,8 @@ public class MenuScript : MonoBehaviour
         Application.Quit();
     }
     public void OnBackButton(){
-         StartGame.SetActive(true);
+         TutoButton.SetActive(true);
+        StartGame.SetActive(true);
         Credits.SetActive(true);
         Exit.SetActive(true);
         RollCredits.SetActive(false);

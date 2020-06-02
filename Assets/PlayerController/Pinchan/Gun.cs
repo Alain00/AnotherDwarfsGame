@@ -27,7 +27,6 @@ public class Gun : MonoBehaviour
     
 
     public void Start(){
-        DontDestroyOnLoad(this);
         /*ChargerLeft = Charger;
         Ammo -= Charger;*/
         Reload();

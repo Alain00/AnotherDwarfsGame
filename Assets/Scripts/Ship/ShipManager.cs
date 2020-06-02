@@ -24,6 +24,7 @@ public class ShipManager : MonoBehaviour
         controller.OnWaveBegins += Leave;
         controller.OnWaveCompleted += Arrive;
         controller.OnLastWaveCompleted += Arrive;
+        
     }
 
     void Arrive(){

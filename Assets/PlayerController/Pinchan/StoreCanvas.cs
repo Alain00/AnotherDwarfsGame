@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoreCanvas : MonoBehaviour
 {
     StoreManager Manager;
-    void Start()
+    void Awake()
     {
         Manager = GameObject.FindObjectOfType<StoreManager>();
         

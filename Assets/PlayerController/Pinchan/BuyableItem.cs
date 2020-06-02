@@ -12,8 +12,10 @@ public class BuyableItem : MonoBehaviour
     public Vector3 CamDist;
     public Vector3 Rotation;
     Vector3 StartScale;
-    Vector3 StartPos;
-    Vector3 StartRot;
+    [HideInInspector]
+    public Vector3 StartPos;
+    [HideInInspector]
+    public Vector3 StartRot;
     public bool Gun;
     public int AmmoCant;
   

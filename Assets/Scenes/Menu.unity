@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59cb239bbf528b4a82f5dc136430075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TutoButton: {fileID: 0}
+  TutoButton: {fileID: 1405748784}
   StartGame: {fileID: 359214982}
   Credits: {fileID: 1927285363}
   Exit: {fileID: 1045123757}

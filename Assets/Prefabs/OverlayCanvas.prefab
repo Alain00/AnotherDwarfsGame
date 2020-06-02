@@ -77,7 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: seconds remaining to midnight
+  m_Text: segundos hasta la medianoche
 --- !u!1 &1445100580
 GameObject:
   m_ObjectHideFlags: 0
